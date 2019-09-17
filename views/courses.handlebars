@@ -1,0 +1,1270 @@
+
+<body><!-- WRAPPER Modal popup box when click become an instructor-->
+<div class="modal  bg-w-form contact-form" id="become_an_instructor" role="dialog" >
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <form action="Become_An_Instructor.php" method="POST" onsubmit="become_An_Instructor();return false" >
+             <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>Apply Now!</center></h3>
+             </div>
+             <div class="row">
+             <div class="modal-body col-md-10 col-md-offset-1">
+               <div class="modal-body col-md-6">
+               <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="bname" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+               </div>
+               <div class="modal-body col-md-6"><label for="regemail" class="control-label form-label">Email <span class="highlight">*</span></label><input name="email" id="bemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+               </div>
+               <div class="modal-body col-md-6"><label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               <div class="modal-body col-md-6">
+               <label for="regpassword" class="control-label form-label">Your Expertise<span class="highlight">*</span></label><input name="expertise" id="bExpertise" type="text" placeholder="skills like....java, php, any other" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               
+                <div class="modal-body col-md-6 col-md-offset-2 ">
+                <input type="submit"  data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"></input>
+                &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="becomeFocus()" value="submit"></input>
+                </div>
+             </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="bmyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>
+     <!-- WRAPPER Modal popup box close when click become an instructor-->
+     <!-- WRAPPER Modal popup box when click enroll now-->
+     <div class="modal fade bg-w-form contact-form" id="enroll_now" role="dialog">
+         <div class="modal-dialog">
+         
+           <!-- Modal content-->
+           <div class="modal-content">
+           <form  action="Enroll_now.php" method="POST" onsubmit="enroll_now();return false" >
+             <div class="modal-header"> 
+              <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>REGISTER NOW!</center></h3>
+             </div>
+             <div class="row">
+                 <div class="modal-body col-md-10 col-md-offset-1" >
+                   <div class="modal-body col-md-6">
+                   <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="ename" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regemail" class="control-label form-label">Email-Id <span class="highlight">*</span></label><input name="email" id="eemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="emobile"  id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   <!---label for="regpassword" class="control-label form-label">Area Of Expertise <span class="highlight">*</span></label><input id="Expertise" type="password" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/--->
+                    
+                    </div>
+                    
+                    
+                    
+                    <div class="modal-body col-md-6">
+                   <label for="course_applied_for " class="control-label form-label">Course Applied For  <span class="highlight">*</span></label><input name="course_applied_for" id="course_applied_for"  type="text"   placeholder="e.g MEAN/JAVA/PHP/......" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   
+                    <input id="course_name" hidden type="text" value="BUSINESS ANALYST" >
+                    </div>
+ 
+                    
+                    <div class="modal-body col-md-6 col-md-offset-2">
+                   <input type="submit" data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"/>
+                   &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="enrollFocus()" value="Submit"></input>
+                   </div>
+                </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="emyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>    <!-- End -->
+    <!-- WRAPPER-->
+    <div id="wrapper-content">
+        <!-- PAGE WRAPPER-->
+        <div id="page-wrapper">
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <!-- CONTENT-->
+                <div class="content">
+                    <div class="section background-opacity page-title set-height-top">
+                        <div class="container">
+                            <div class="page-title-wrapper">
+                                <!--.page-title-content-->
+                                <h2 class="captions">all categories</h2>
+                                <ol class="breadcrumb">
+                                    <li><a href="/">Home</a></li>
+                                    <li class="active"><a href="#">Courses</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- green section start -->
+                    <!-- <div class="section">
+                    <div class="search-input">
+                        <div class="container">
+                            <div class="search-input-wrapper">
+                                <form><select class="form-select style-1 selectbox">
+                                    <option value="all">all categories</option>
+                                    <option value="languages">languages</option>
+                                    <option value="science">science</option>
+                                </select><select class="form-select style-2 selectbox">
+                                    <option value="price">price</option>
+                                    <option value="datetime">datetime</option>
+                                    <option value="teacher">teacher</option>
+                                </select><input type="text" placeholder="Do you want to learn today?" class="form-input"/>
+                                    <button type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- End green section -->
+
+                    <div class="section section-padding courses">
+                        <div class="container">
+                            <div class="group-title-index">
+                                <h2 class="center-title">Courses</h2>
+                                <h4 class="top-title">Get onto the next level of learning With <b> Code Sensei </b></h4>
+                                <!--.bottom-title<i class="bottom-icon icon-a-1-01"></i>-->
+                            </div>
+                            <div class="courses-wrapper">
+                                <!-- Nav tabs-->
+                                <div class="row top-content">
+                                    <div class="col-md-3">
+                                        <!-- <div class="result-output text-left"><p class="result-count">Showing <strong>1-6</strong> of total <strong>12</strong> courses</p></div> -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul role="tablist" class="nav nav-tabs edugate-tabs">
+                                            <li role="presentation" class="active"><a href="#campus" data-toggle="tab"
+                                                    class="text">All Courses </a></li>
+
+                                            <li role="presentation"><a href="#education" data-toggle="tab"
+                                                    class="text"> Digital Markating</a></li>
+                                            <!-- <li role="presentation"><a href="#teachers" data-toggle="tab" -->
+                                                    <li role="presentation"><a href="#campus" data-toggle="tab"
+                                                    class="text">Full Stack </a></li>
+
+                                            <!-- <li role="presentation"><a href="#students" data-toggle="tab" -->
+                                                    <li role="presentation"><a href="#campus" data-toggle="tab"
+                                                    class="text">Certified Course</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <!-- <ul class="btn-list-grid list-unstyled text-right">
+                                        <li class="active">
+                                            <button class="btn-grid"><i class="fa fa-th-large"></i></button>
+                                        </li>
+                                        <li>
+                                            <button class="btn-list"><i class="fa fa-th-list"></i></button>
+                                        </li>
+                                    </ul> -->
+                                    </div>
+                                </div>
+
+    
+
+
+    
+                                <div class="tab-content courses-content">
+
+                                    <!-- technology -->
+                                    <div id="campus" role="tabpanel" class="tab-pane fade in active">
+                                        <div class="style-show style-grid row">
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href='/best-meanstack-training-institute-in-noida'
+                                                                class="title">MEAN Stack</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div> -->
+                                                            <!-- <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-80"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">MEAN is a collection of JavaScript based technologies used to develop web applications. </div>
+                                                            <button class="btn btn-green"  onclick="window.location.href='/best-meanstack-training-institute-in-noida'"><span>Know
+                                                                    More</span></button>
+                                                                    
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/Mean-Stack.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="best-java-programs-training-institute-in-noida.html"
+                                                                class="title">Java programing</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-40"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Java courses are specially designed for the candidates who want to learn all aspects of Java from the basics.
+                                                            </div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-java-programs-training-institute-in-noida.html'"><span>Know More</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-2.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="/best-web-designing-training-institute-in-noida"
+                                                                class="title">Web Designing</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-30"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">This programs gives you a comprehensive knowledge. Best for those who want to make their career in this.</div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-web-designing-training-institute-in-noida.html'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/website-designing2.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="/best-angularjs-training-institute-in-noida"
+                                                                class="title">Angular</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-60"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Angular is a JavaScript open-source web application framework. Join our program for quick and efficient learning.  
+                                                            </div>
+                                                            <button class="btn btn-green "onclick="window.location.href='best-angularjs-training-institute-in-noida.html'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/angular.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href=""
+                                                                class="title">Machine learning</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-60"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Machine Learning  a form of artificial intelligence is very much in demand these days. Learn latest technology with us.</div>
+                                                            <button class="btn btn-green" data-target="#enroll_now"  data-toggle="modal" ><span>ENQUIRE NOW!</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/Machine-Learning-Technologies.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="best-python-training-institute-in-noida.html"
+                                                                class="title">Python</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Learn Python, the upcoming and promising programming. Python is a high-level ,general-purpose language.</div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-python-training-institute-in-noida.html'"><span>Know
+                                                                    More</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/Python-930x403.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="#"
+                                                                class="title">Oracle</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Oracle apps is a complete set of business applications for managing and automating processes for your enterprise. </div>
+                                                            <button class="btn btn-green" data-target="#enroll_now"  data-toggle="modal" ><span>ENQUIRE NOW!
+                                                                    </span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/Oracle Cloud.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="best-.net-training-institute-in-noida.html"
+                                                                class="title">.Net/Asp.net</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">net is a new business strategy from Microsoft. Get start with your enterprise programming career with .net.</div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-.net-training-institute-in-noida.html'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/dotnet.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="/best-nodejs-training-institute-in-noida"
+                                                                class="title"> Node.Js</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Node.js is in huge demand for being an open-source, cross-platform to build scalable network applications.</div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-nodejs-training-institute-in-noida.html'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/    Node.js_logo.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="/best-expressjs-training-institute-in-noida"
+                                                                class="title">Express.Js</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Learn Express.Js a web application framework for Node.js to make application development fast and easy.</div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-expressjs-training-institute-in-noida.html'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/express JS.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="best-php-programs-training-training-institute-in-noida.html"
+                                                                class="title">Php Programing</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Develop dynamic and static websites with PHP. Program will enable you to be a creative and an innovative developer.
+                                                            </div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-php-programs-training-training-institute-in-noida.html'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-4.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="best-c++-training-institute-in-noida.html"
+                                                                class="title">C/C++</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Get equipped with well-known object-oriented programming language. Join us to get trained on c/c++.</div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-c++-training-institute-in-noida.html'" ><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/C++.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="#"
+                                                                class="title">Digital Marketing </a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">Learn how to do marketing online, Boost website traffic, generate potential leads and  
+
+                                                                ransform yourself. </div>
+                                                            <button class="btn btn-green" onclick="window.location.href='best-digital marketing-training-institute-in-noida.html'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/Digital-Marketing.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="/best-mongodb-training-institute-in-noida"
+                                                                class="title"> MongoDB</a>
+
+                                                            <!-- <div class="info">
+                                                            <div class="author item"><a href="#">By Admin</a></div>
+                                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                        </div>
+                                                        <div class="info-more">
+                                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                                <p> 56</p></div>
+                                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                <p> 239</p></div>
+                                                        </div>
+                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                            <div class="description">MongoDB allows you to organize, use and enrich data - in real time. </div>
+                                                            <button class="btn btn-green" onclick="window.location.href='/best-mongodb-training-institute-in-noida'"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/mongodb.png" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- <nav class="pagination col-md-12">
+                                            <ul class="pagination__list">
+                                                <li><a rel="prev" href="#" class="pagination__previous btn-squae disable">&#8249;</a></li>
+                                                <li><span class="pagination__page btn-squae active">1</span></li>
+                                                <li><a href="#" class="pagination__page btn-squae">2</a></li>
+                                                <li><a href="#" class="pagination__page btn-squae">...</a></li>
+                                                <li><a href="#" class="pagination__page btn-squae">14</a></li>
+                                                <li><a rel="next" href="#" class="pagination__next btn-squae">&#8250;</a></li>
+                                            </ul>
+                                        </nav> -->
+                                        </div>
+                                    </div>
+<!-- End -->
+
+                    <!-- digital markating -->
+                    <div id="education" role="tabpanel" class="tab-pane fade">
+                            <div class="style-show style-grid row">
+
+                                
+                                    <div class="col-style">
+                                            <div class="edugate-layout-2">
+                                                <div class="edugate-layout-2-wrapper">
+                                                    <div class="edugate-content"><a href="#"
+                                                            class="title">Digital Marketing </a>
+
+                                                        <!-- <div class="info">
+                                                        <div class="author item"><a href="#">By Admin</a></div>
+                                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                    </div>
+                                                    <div class="info-more">
+                                                        <div class="view item"><i class="fa fa-user"></i>
+
+                                                            <p> 56</p></div>
+                                                        <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                            <p> 239</p></div>
+                                                    </div>
+                                                    <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div> -->
+                                                        <div class="description">Learn how to do marketing online, Boost website traffic, generate potential leads and  
+
+                                                            transform yourself. </div>
+                                                        <button class="btn btn-green" onclick="window.location.href='best-digital marketing-training-institute-in-noida.html'"><span>learn
+                                                                now</span></button>
+                                                    </div>
+                                                    <div class="edugate-image"><img
+                                                            src="images/courses/Digital-Marketing.png" alt=""
+                                                            class="img-responsive" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                            </div>
+                        </div>
+<!-- End -->
+
+<!-- soft skill -->
+
+<div id="building" role="tabpanel" class="tab-pane fade">
+        <div class="style-show style-grid row">
+
+            <div class="col-style">
+                <div class="edugate-layout-2">
+                    <div class="edugate-layout-2-wrapper">
+                        <div class="edugate-content"><a href="japanese.html"
+                                class="title">Japanese Language</a>
+
+                            <!-- <div class="info">
+                                <div class="author item"><a href="#">By Admin</a></div>
+                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                </div>
+                            </div> -->
+                            <!-- <div class="info-more">
+                                <div class="view item"><i class="fa fa-user"></i>
+
+                                    <p> 56</p>
+                                </div>
+                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                    <p> 239</p>
+                                </div>
+                            </div> -->
+                            <!-- <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                    class="width-10"><strong
+                                        class="rating">5.00</strong> out of 5</span>
+                            </div> -->
+                            <div class="description">If you are aspiring to take your career to the next level. Our Japanese language program will help you to achieve it.</div>
+                            <button class="btn btn-green" onclick="window.location.href='japanese.html'"><span>learn
+                                    now</span></button>
+                        </div>
+                        <div class="edugate-image"><img
+                                src="images/courses/japanese.png" alt=""
+                                class="img-responsive" /></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+<!-- End -->
+
+
+
+                                    <div id="teachers" role="tabpanel" class="tab-pane fade">
+                                        <div class="style-show style-grid row">
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-60"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-3.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-70"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-4.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-20"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/categories/categories-1.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-10"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-2.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-90"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-1.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-100"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/categories/categories-4.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav class="pagination col-md-12">
+                                                <ul class="pagination__list">
+                                                    <li><a rel="prev" href="#"
+                                                            class="pagination__previous btn-squae disable">&#8249;</a>
+                                                    </li>
+                                                    <li><span class="pagination__page btn-squae active">1</span></li>
+                                                    <li><a href="#" class="pagination__page btn-squae">2</a></li>
+                                                    <li><a href="#" class="pagination__page btn-squae">...</a></li>
+                                                    <li><a href="#" class="pagination__page btn-squae">14</a></li>
+                                                    <li><a rel="next" href="#"
+                                                            class="pagination__next btn-squae">&#8250;</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <div id="students" role="tabpanel" class="tab-pane fade">
+                                        <div class="style-show style-grid row">
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-10"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-1.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-80"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-2.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-20"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-3.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-60"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-4.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-20"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-1.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-style">
+                                                <div class="edugate-layout-2">
+                                                    <div class="edugate-layout-2-wrapper">
+                                                        <div class="edugate-content"><a href="courses-detail.html"
+                                                                class="title">Photoghaphy Master</a>
+
+                                                            <div class="info">
+                                                                <div class="author item"><a href="#">By Admin</a></div>
+                                                                <div class="date-time item"><a href="#">17 sep 2015</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="info-more">
+                                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                                    <p> 56</p>
+                                                                </div>
+                                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                                    <p> 239</p>
+                                                                </div>
+                                                            </div>
+                                                            <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                                    class="width-40"><strong
+                                                                        class="rating">5.00</strong> out of 5</span>
+                                                            </div>
+                                                            <div class="description">It is a long established fact that
+                                                                a reader will be distracted by the readable content of a
+                                                                page when looking at its layout. The point of using. It
+                                                                is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when l
+                                                                ooking at its layout. The point of using. Dalmatian
+                                                                hello amazing the rmore flung as thanks a manta dealt to
+                                                                under emu some the and one baldbe dear sobbingly save
+                                                                and spitefully less</div>
+                                                            <button class="btn btn-green"><span>learn
+                                                                    now</span></button>
+                                                        </div>
+                                                        <div class="edugate-image"><img
+                                                                src="images/courses/courses-2.jpg" alt=""
+                                                                class="img-responsive" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav class="pagination col-md-12">
+                                                <ul class="pagination__list">
+                                                    <li><a rel="prev" href="#"
+                                                            class="pagination__previous btn-squae disable">&#8249;</a>
+                                                    </li>
+                                                    <li><span class="pagination__page btn-squae active">1</span></li>
+                                                    <li><a href="#" class="pagination__page btn-squae">2</a></li>
+                                                    <li><a href="#" class="pagination__page btn-squae">...</a></li>
+                                                    <li><a href="#" class="pagination__page btn-squae">14</a></li>
+                                                    <li><a rel="next" href="#"
+                                                            class="pagination__next btn-squae">&#8250;</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BUTTON BACK TO TOP-->
+        <div id="back-top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div>
+    </div>
+</body>

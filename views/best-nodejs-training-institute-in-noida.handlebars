@@ -1,0 +1,1337 @@
+<body>
+     <!-- script for modal pop up when clicked on enquir now & become an instructor -->
+
+<script>
+        function becomeFocus() {
+            $('#bname').focus();
+            }
+    
+        </script>
+        <script>
+        function enrollFocus() {
+            $('#ename').focus();
+            }
+       
+        </script>
+        <script>
+        document.addEventListener('keyup', function(e) {
+        if (e.keyCode == 27) {
+        //alert('fsdf');
+            document.getElementById('enroll_now').style.display = "none";
+        }
+    });
+    $(document).on('open', '.modal', function () {
+        $('input').attr('tabindex', "-1");
+        $('.modal-body input').each(function(index, input) {
+            input.tabIndex = index + 1;
+        });
+    });
+    
+    $(document).on('close', '.modal', function () {
+        $('input').each(function(index, input) {
+            input.tabIndex = index + 1;
+         });
+    });
+    
+        </script>
+<!-- End script for modal pop up when clicked on enquir now & become an instructor -->
+
+
+<!-- WRAPPER Modal popup box when click become an instructor-->
+<div class="modal  bg-w-form contact-form" id="become_an_instructor" role="dialog" >
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <form action="Become_An_Instructor.php" method="POST" onsubmit="become_An_Instructor();return false" >
+             <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>Apply Now!</center></h3>
+             </div>
+             <div class="row">
+             <div class="modal-body col-md-10 col-md-offset-1">
+               <div class="modal-body col-md-6">
+               <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="bname" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+               </div>
+               <div class="modal-body col-md-6"><label for="regemail" class="control-label form-label">Email <span class="highlight">*</span></label><input name="email" id="bemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+               </div>
+               <div class="modal-body col-md-6"><label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               <div class="modal-body col-md-6">
+               <label for="regpassword" class="control-label form-label">Your Expertise<span class="highlight">*</span></label><input name="expertise" id="bExpertise" type="text" placeholder="skills like....java, php, any other" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               
+                <div class="modal-body col-md-6 col-md-offset-2 ">
+                <input type="submit"  data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"></input>
+                &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="becomeFocus()" value="submit"></input>
+                </div>
+             </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="bmyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>
+     <!-- WRAPPER Modal popup box close when click become an instructor-->
+     <!-- WRAPPER Modal popup box when click enroll now-->
+     <div class="modal fade bg-w-form contact-form" id="enroll_now" role="dialog">
+         <div class="modal-dialog">
+         
+           <!-- Modal content-->
+           <div class="modal-content">
+           <form  action="Enroll_now.php" method="POST" onsubmit="enroll_now();return false" >
+             <div class="modal-header"> 
+              <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>REGISTER NOW!</center></h3>
+             </div>
+             <div class="row">
+                 <div class="modal-body col-md-10 col-md-offset-1" >
+                   <div class="modal-body col-md-6">
+                   <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="ename" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regemail" class="control-label form-label">Email-Id <span class="highlight">*</span></label><input name="email" id="eemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="emobile"  id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   <!---label for="regpassword" class="control-label form-label">Area Of Expertise <span class="highlight">*</span></label><input id="Expertise" type="password" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/--->
+                    
+                    </div>
+                    
+                    
+                    
+                    <div class="modal-body col-md-6">
+                   <label for="course_applied_for " class="control-label form-label">Course Applied For  <span class="highlight">*</span></label><input name="course_applied_for" id="course_applied_for"  type="text"   placeholder="e.g MEAN/JAVA/PHP/......" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   
+                    <input id="course_name" hidden type="text" value="BUSINESS ANALYST" >
+                    </div>
+ 
+                    
+                    <div class="modal-body col-md-6 col-md-offset-2">
+                   <input type="submit" data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"/>
+                   &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="enrollFocus()" value="Submit"></input>
+                   </div>
+                </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="emyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>
+    <!-- End -->
+<!-- WRAPPER-->
+<div id="wrapper-content"><!-- PAGE WRAPPER-->
+    <div id="page-wrapper"><!-- MAIN CONTENT-->
+        <div class="main-content"><!-- CONTENT-->
+            <div class="content">
+                <div class="section background-opacity page-title set-height-top">
+                    <div class="container">
+                        <div class="page-title-wrapper"><!--.page-title-content--><h2 class="captions">NodeJS</h2>
+                            <ol class="breadcrumb">
+                                <li><a href="/">Home</a></li>
+                                <!-- <li><a href="categories.html">Categories</a></li> -->
+                                <li><a href="/courses">Courses</a></li>
+                                <li><a href="/best-meanstack-training-institute-in-noida">MEAN</a></li>
+                                <li><a href="/best-nodejs-training-institute-in-noida">NodeJS</a></li>
+                                <!-- <li class="active"><a href="#">Courses Detail</a></li> -->
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+               <!-- <div class="section">
+                    <div class="search-input">
+                        <div class="container">
+                            <div class="search-input-wrapper">
+                                <form><select class="form-select style-1 selectbox">
+                                    <option value="all">all categories</option>
+                                    <option value="languages">languages</option>
+                                    <option value="science">science</option>
+                                </select><select class="form-select style-2 selectbox">
+                                    <option value="price">price</option>
+                                    <option value="datetime">datetime</option>
+                                    <option value="teacher">teacher</option>
+                                </select><input type="text" placeholder="Do you want to learn today?" class="form-input"/>
+                                    <button type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="section section-padding courses-detail">
+                    <div class="container">
+                        <div class="courses-detail-wrapper">
+                            <div class="row">
+                                <div class="col-md-9 layout-left">
+                                    <!-- <h1 class="course-title">GETTING STARTED WITH DJANGO</h1> -->
+
+                                   <!-- <div class="course-info info">
+                                        <div class="author item"><a href="#"><span>By&nbsp;</span><span>Emma Watson</span></a></div>
+                                        <div class="date-time item"><a href="#">20 Aug 2015</a></div>
+                                    </div>-->
+                                    <div class="course-video">
+                                        <!-- <iframe src="https://www.youtube.com/embed/xo1VInw-SKc?list=PL7JgdmQ0zTfatnGhUnRBnhMwYEraSIRdD" allowfullscreen="allowfullscreen"></iframe> -->
+                                        <div class="video-btn">
+                                            <!-- <button class="btn btn-grey video-btn-right pull-right"><span>next lesson</span><i class="fa fa-angle-right"></i></button> -->
+                                            <!-- <button class="btn btn-grey video-btn-left pull-right"><i class="fa fa-angle-left"></i><span>previous lesson</span></button> -->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="course-des">
+                                            <div class="course-des-title underline">Courses Info</div>
+                                            <div class="course-des-content"><p>Node.js is an open-source, cross-platform and it can runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.) Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient. In a nutshell, Node.js is a program we can use to execute JavaScript on our computers making it a JavaScript runtime. </p>
+                                               <p>It is helps us in building an applications that require some form of real-time interaction or collaboration. It’s also a good fit for building APIs where you’re handling lots of requests that are I/O driven. </p>
+                                                <blockquote>
+                                                   <!-- <div class="main-quote">Video courses to build new skills from start to finish.</div>-->
+                                                    <div class="sub-quote">Trainer is having good industry experience in NodeJS. Trainer help us to gain real time scenarios and how to boost our career.</div>
+                                                    <footer>Ritesh &nbsp;
+                                                        <small>(NodeJS Student)</small>
+                                                    </footer>
+                                                </blockquote>
+                                            </div>
+                                            <div class="news-list">
+                                                <div class="list-expand-title">What You Will  Gain? </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <ul class="list-unstyled list-detail">
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">How to Build, test, and launch Node apps. </a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">Learn how to Create APIs and Express web servers. </a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#"> How to use ES6/ES7 JavaScript. </a></li>
+                                                            <!--<li><i class="fa fa-angle-right"></i><a href="#">Etiam id lorem vel neque faucibus fermentum.</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">Nunc tincidunt augue in enim sollicitudin feugiat.</a></li>-->
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <ul class="list-unstyled list-detail">
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">Learn to deploy Node apps to production </a></li>
+                                                           <li><i class="fa fa-angle-right"></i><a href="#">Complete understanding of JavaScript and technical concepts behind NodeJS Structure a Node application in modules .</a></li>
+                                                            <!--<li><i class="fa fa-angle-right"></i><a href="#">Nullam id dolor in ex eleifend tempus.</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">Etiam id lorem vel neque faucibus fermentum.</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">Nunc tincidunt augue in enim sollicitudin feugiat.</a></li>-->
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="course-syllabus">
+                                        <div class="course-syllabus-title underline">Courses syllabus</div>
+                                        <div class="course-table">
+                                            <div class="outer-container">
+                                                <div class="inner-container">
+                                                    <div class="table-header">
+                                                        <table class="edu-table-responsive">
+                                                            <thead>
+                                                            <tr class="heading-table">
+                                                                <th class="col-1">title</th>
+                                                                <!--<th class="col-2">estimate time</th>
+                                                                <th class="col-3">spent time</th>
+                                                                <th class="col-4">status</th>-->
+                                                            </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                    <div class="table-body">
+                                                        <table class="edu-table-responsive table-hover">
+                                                            <tbody>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">1.Node.js Introduction</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>1.1 Node.js Intro</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>1.2 Installing Node</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>1.3 What Is Node ?</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>1.4 Why Should I Use Node?</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>1.5 Installing Atom</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>1.6 Hello World!</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">2. Node.js Fundamentals(Note App)</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.1 Section Intro</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.2 Using Require</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.3 Requiring Your Own Files</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.4 Using 3rd Party Modules</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.5 Restarting App with Nodemon</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.6 Getting Input From User</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.7 Simplified Input With Yargs</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.8 Working With JSON</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.9 Adding and Saving Notes</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.10 Refactoring For Reusability</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.11 Removing a Note</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.12 Reading Notes and Reusability</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.13 Debugging Node.js Applications</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.14 Debugging via Chrome Dev Tools</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.15 Listing Notes</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.16 Requiring Arguments and Advanced Yargs</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>2.8 Arrow Functions</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">3. Asynchronous Fundamentals(Note App)</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.1 Section Intro</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.2 Async Basics</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.3 Call Stack & Event Loop</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.4 Callback Functions & APIs</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.5 Pretty Printing Objects</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.6 What's Makes up an HTTP Request?</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.7 Encoding User Input</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.8 Callback Errors</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.9 Abstracting Callbacks</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.10 Wiring Up Weather Search</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.11 Chaining Callbacks Together</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.12 Intro to ES6 Promises</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.13 Advanced Promises</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.14 Promises Quiz</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.15 Weather App With Promises</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>3.16 Extra Features</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">4.Web Service and Application Deployment</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.1 Section Intro</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.2 Hello Express</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.3 Creating a Web Server</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.4 Rendering Templates with Data</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.5 Advanced Templating</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.6 Express Middleware</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.7 Adding Version Control (Git)</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.8 Setting Up GitHub & SSH Keys</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.9 Deploying Your Apps</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>4.10 Adding a New Feature and Deploying</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>     
+                                                            
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">5.Testing Your Application</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.1 Section Intro</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.2 Mocha and Basic Testing</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.3 Watch and Auto Restart Tests</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.4 Using an Assertion Library</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.5 Testing Asynchronous Code</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.6 Testing Express Applications: Part I</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.7 Adding Version Control (Git)</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.8 Testing Express Applications: Part II</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.9 Organizing Test With describe()</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>5.10 Test Spies</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>   
+                                                            
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">6.MongoDB,Mongoose,and REST APIs(Todo API)</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.1 Section Intro</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.2 Installing MongoDB and Robomongo (Mac, Linux)</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.3 Installing MongoDB and Robomongo (Windows)</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.4 Building a NoSQL Vocabulary</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.5 Connecting to Mongo and Writing Data</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.6 The ObjectId</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.7 Fetching Data</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.8 Setting Up The Repo</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.9 Deleting Documents</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.10 Updating Data</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.11 The Mongoose ORM</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.12 Setting Up Mongoose</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.13 Validators, Types, and Defaults</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.14 Installing Postman</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.15 Resource Creation Endpoint - POST /todos</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.16 Testing POST /todos</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.17 List Resources - GET /todos</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.18 Testing GET /todos</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.19 Mongoose Queries and ID Validation</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.20 Getting an Individual Resource - GET /todos/:id</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>   
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.21 Testing GET /todos/:id</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.22 Deploy API to Heroku</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.23 Postman Environments</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.24 Delete a Resource - DELETE /todos/:id</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.25 Testing DELETE /todos/:id</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.26 Updating a Resource - PATCH /todos/:id</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.27 Testing PATCH /todos/:id</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>6.28 Creating a Test Database</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>  
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">7.Security and Authentication</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.1 Section Intro</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.2 Setting Up The User Model</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.3 JWTs and Hashing</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.4 Generating Auth Tokens and Setting Headers</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.5 Private Routes and Auth Middleware</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.6 Hashing Passwords</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.7 Seeding Test Database With Users</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.8 Testing POST /users and GET /users/me</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.9 Logging In - POST /users/login</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.10 Testing POST /users/login</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.11 Logging Out - DELETE /users/me/token</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.12 Testing DELETE /users/me/token</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.13 Making Todo Routes Private (Part 1)</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.14 Making Todo Routes Private (Part 2)</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.15 Improving App Configuration</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.16 Deploying To Heroku</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.17 Bonus: Advanced Postman</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>7.18 Bonus: Expect Upgrade Guide</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>   
+                                                            
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">8.Real-Time Web Apps with Socket.io</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.1 Section Intro</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.2 Creating a New Project</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.3 Adding Socket.io to an App</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.4 Emitting and Listening to Events</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.5 Emitting and Listening to Events (Solution)</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.6 Broadcasting Events</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.7 Message Generator & Tests</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.8 Event Acknowledgements</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.9 Message Form & jQuery</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.10 Geolocation Part I</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.11 Geolocation Part II</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.12 Styling The Chat Page</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.13 Timestamps and Formatting with Moment</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.14 Printing Message Timestamps</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.15 Moustache.js</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.16 Autoscrolling</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.17 Adding a Join Page</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row col-4">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.18 Passing Room Data</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.19 Socket.io Rooms</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.20 Storing Users With ES6 Classes: Part I</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>   
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.21 Storing Users With ES6 Classes: Part II</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.22 Wiring Up User List</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.23 Sending Messages To Room Only</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>8.24 New Feature Ideas</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr> 
+                                                            
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">9.Async/Await - Just Added</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>9.1 Async/Await Project Setup</span></a></td>
+                                                               <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>9.2 Async/Await Basics</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>9.3 Async/Await Real-World Example</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>9.4 Async/Await Real-World Example: Part II</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>9.5 Handling Errors and Awaiting Async Function</span></a></td>
+                                                               <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><i class="bg-green mr25 fa fa-caret-right"></i><span>9.6 Using Async/Await in the Todo API</span></a></td>
+                                                                <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 sidebar layout-right">
+                                    <div class="row">
+                                        <div class="course-price-widget widget col-sm-6 col-md-12 col-xs-6 ₹">
+                                                
+                                            <div class="title-widget"><p>Details</p></div>
+                                            <div class="content-widget">
+                                                <div class="course-price-widget-wrapper">
+                                                    <div class="row">
+                                                        <div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                            <div class="pull-left title">Duration</div>
+                                                            <div class="pull-right level">1 Months</div>
+                                                        </div>
+                                                        <div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                            <div class="pull-left title">Level:</div>
+                                                            <div class="pull-right level">Advanced</div>
+                                                        </div>
+                                                       <!-- <div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                            <div class="pull-left title">Finished:</div>
+                                                            <div class="pull-right firgue">42</div>
+                                                        </div>-->
+                                                        <!--<div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                            <div class="pull-left title">Rate:</div>
+                                                            <div title="Rated 5.00 out of 5" class="pull-right star-rating"><span class="width-80"><strong class="rating">5.00</strong> out of 5</span></div>
+                                                        </div>-->
+                                                    </div>
+                                                    <button class="btn btn-green" data-target="#enroll_now"  data-toggle="modal"><span>ENQUIRE NOW!</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="author-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
+                                            <div class="title-widget">about emma watson</div>
+                                            <div class="content-widget">
+                                                <div class="staff-item author-widget-wrapper customize">
+                                                    <div class="staff-item-wrapper">
+                                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-3.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">lana simth</a>
+
+                                                            <div class="staff-job">vice head teacher</div>
+                                                            <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="clearfix"></div>
+                                        
+<!--                                         
+                                        <div class="popular-course-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
+                                            <div class="title-widget">popular courses</div>
+                                            <div class="content-widget">
+                                                <div class="media">
+                                                    <div class="media-left"><a href="courses-detail.html" class="link"><img src="assets/images/popular/popular-1.jpg" alt="" class="media-image"/></a></div>
+                                                    <div class="media-right">
+                                                        <div class="cur">35</div>
+                                                        <a href="courses-detail.html" class="link title">Adobe Lightroom CC for Photographers</a>
+
+                                                        <div class="info">
+                                                            <div class="author item"><a href="#"><span>By Sandara</span></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="media-left"><a href="courses-detail.html" class="link"><img src="assets/images/popular/popular-2.jpg" alt="" class="media-image"/></a></div>
+                                                    <div class="media-right">
+                                                        <div class="cur">40</div>
+                                                        <a href="courses-detail.html" class="link title">Adobe Lightroom CC for Photographers</a>
+
+                                                        <div class="info">
+                                                            <div class="author item"><a href="#"><span>By Sandara</span></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="media-left"><a href="courses-detail.html" class="link"><img src="assets/images/popular/popular-3.jpg" alt="" class="media-image"/></a></div>
+                                                    <div class="media-right">
+                                                        <div class="cur">34</div>
+                                                        <a href="courses-detail.html" class="link title">Adobe Lightroom CC for Photographers</a>
+
+                                                        <div class="info">
+                                                            <div class="author item"><a href="#"><span>By Sandara</span></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="media-left"><a href="courses-detail.html" class="link"><img src="assets/images/popular/popular-4.jpg" alt="" class="media-image"/></a></div>
+                                                    <div class="media-right">
+                                                        <div class="cur">27</div>
+                                                        <a href="courses-detail.html" class="link title">Adobe Lightroom CC for Photographers</a>
+
+                                                        <div class="info">
+                                                            <div class="author item"><a href="#"><span>By Sandara</span></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="tag-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
+                                            <div class="title-widget">tags</div>
+                                            <div class="content-widget">
+                                                <ul class="tag-widget list-unstyled">
+                                                    <li><a href="/best-web-designing-training-institute-in-noida" class="tag-item">Web Designing</a></li>
+                                                    <li><a href="best-php-programs-training-training-institute-in-noida.html" class="tag-item">PHP Programs</a></li>
+                                                    <li><a href="best-java-training-institute-in-noida.html" class="tag-item">Java Programs</a></li>
+                                                    <li><a href="best-python-training-institute-in-noida.html" class="tag-item">Python</a></li>
+                                                    <!-- <li><a href="best-spring-training-institute-in-noida.html" class="tag-item">Spring</a></li> -->
+                                                    <!-- <li><a href="best-spring-boot-training-institute-in-noida.html" class="tag-item">Spring Boot</a></li> -->
+                                                    <!-- <li><a href="best-oracle-training-institute-in-noida.html" class="tag-item">Oracle</a></li> -->
+                                                    <li><a href="/best-nodejs-training-institute-in-noida" class="tag-item">NodeJS</a></li>
+                                                    <li><a href="/best-angularjs-training-institute-in-noida" class="tag-item">AngularJS</a></li>
+                                                    <li><a href="/best-expressjs-training-institute-in-noida" class="tag-item">ExpressJS</a></li>
+                                                    <li><a href="/best-mongodb-training-institute-in-noida" class="tag-item">MongoDB</a></li>
+                                                    <!-- <li><a href="best-machine-learning-training-institute-in-noida.html" class="tag-item">Machine Learning</a></li> -->
+                                                    <!-- <li><a href="best-micro-services-training-institute-in-noida.html" class="tag-item">Micro Services</a></li> -->
+                                                    <li><a href="best-.net-training-institute-in-noida.html" class="tag-item">.Net</a></li>
+                                                    <!-- <li><a href="best-graphics-training-institute-in-noida.html" class="tag-item">Graphics</a></li> -->
+                                                    <li><a href="best-c++-training-institute-in-noida.html" class="tag-item">C/C++</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                            <div class="clearfix"></div>
+
+                                            <div class="news-list">
+                                                    <div class="list-expand-title">A Few Things You'll Love!</div>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                                            <ul class="list-unstyled list-detail">
+                                                                <li><i class="fa fa-angle-right"></i><a href="#"> Certified & Industry Experts Trainers</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Multiple Training Delivery Models</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#"> 24/7 e-Learning Access</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Assessments and Mock Tests</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#"> Advance Analytical Reports</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#"> Placement Assistance</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                           
+                                       
+                                        <div class="clearfix"></div>
+                                        <div class="category-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
+                                                <div class="title-widget">categories</div>
+                                                <div class="content-widget">
+                                                    <ul class="category-widget list-unstyled">
+                                                        <li><a href="courses.html" class="link cat-item"><span class="pull-left">Technology</span><span class="pull-right">12</span></a></li>
+                                                        <li><a href="softskill.html" class="link cat-item"><span class="pull-left">Soft-skill/PD</span><span class="pull-right">6</span></a></li>
+                                                       <!--<li><a href="categories.html" class="link cat-item"><span class="pull-left">Photography</span><span class="pull-right">56</span></a></li>
+                                                        <li><a href="categories.html" class="link cat-item"><span class="pull-left">Video</span><span class="pull-right">24</span></a></li>
+                                                        <li><a href="categories.html" class="link cat-item"><span class="pull-left">Miscellaneous</span><span class="pull-right">13</span></a></li>-->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BUTTON BACK TO TOP-->
+    <div id="back-top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div>
+</div>
+
+    <!-- LOADING-->
+    <div class="body-2 loading">
+        <div class="dots-loader"></div>
+    </div>
+    
+</body>
+

@@ -1,0 +1,772 @@
+
+
+<body>
+ 
+ <script>
+        function becomeFocus() {
+            $('#bname').focus();
+            }
+        
+        </script>
+        <script>
+        function enrollFocus() {
+            $('#ename').focus();
+            }
+      
+        </script>
+        <script>
+        document.addEventListener('keyup', function(e) {
+        if (e.keyCode == 27) {
+        //alert('fsdf');
+            document.getElementById('enroll_now').style.display = "none";
+        }
+    });
+    $(document).on('open', '.modal', function () {
+        $('input').attr('tabindex', "-1");
+        $('.modal-body input').each(function(index, input) {
+            input.tabIndex = index + 1;
+        });
+    });
+    
+    $(document).on('close', '.modal', function () {
+        $('input').each(function(index, input) {
+            input.tabIndex = index + 1;
+         });
+    });
+    
+        </script>
+<!-- End script for modal pop up when clicked on enquir now & become an instructor -->
+
+
+
+    <!-- WRAPPER Modal popup box when click become an instructor-->
+<div class="modal  bg-w-form contact-form" id="become_an_instructor" role="dialog" >
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <form action="Become_An_Instructor.php" method="POST" onsubmit="become_An_Instructor();return false" >
+             <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>Apply Now!</center></h3>
+             </div>
+             <div class="row">
+             <div class="modal-body col-md-10 col-md-offset-1">
+               <div class="modal-body col-md-6">
+               <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="bname" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+               </div>
+               <div class="modal-body col-md-6"><label for="regemail" class="control-label form-label">Email <span class="highlight">*</span></label><input name="email" id="bemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+               </div>
+               <div class="modal-body col-md-6"><label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               <div class="modal-body col-md-6">
+               <label for="regpassword" class="control-label form-label">Your Expertise<span class="highlight">*</span></label><input name="expertise" id="bExpertise" type="text" placeholder="skills like....java, php, any other" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               
+                <div class="modal-body col-md-6 col-md-offset-2 ">
+                <input type="submit"  data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"></input>
+                &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="becomeFocus()" value="submit"></input>
+                </div>
+             </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="bmyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>
+     <!-- WRAPPER Modal popup box close when click become an instructor-->
+     <!-- WRAPPER Modal popup box when click enroll now-->
+     <div class="modal fade bg-w-form contact-form" id="enroll_now" role="dialog">
+         <div class="modal-dialog">
+         
+           <!-- Modal content-->
+           <div class="modal-content">
+           <form  action="Enroll_now.php" method="POST" onsubmit="enroll_now();return false" >
+             <div class="modal-header"> 
+              <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>REGISTER NOW!</center></h3>
+             </div>
+             <div class="row">
+                 <div class="modal-body col-md-10 col-md-offset-1" >
+                   <div class="modal-body col-md-6">
+                   <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="ename" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regemail" class="control-label form-label">Email-Id <span class="highlight">*</span></label><input name="email" id="eemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="emobile"  id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   <!---label for="regpassword" class="control-label form-label">Area Of Expertise <span class="highlight">*</span></label><input id="Expertise" type="password" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/--->
+                    
+                    </div>
+                    
+                    
+                    
+                    <div class="modal-body col-md-6">
+                   <label for="course_applied_for " class="control-label form-label">Course Applied For  <span class="highlight">*</span></label><input name="course_applied_for" id="course_applied_for"  type="text"   placeholder="e.g MEAN/JAVA/PHP/......" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   
+                    <input id="course_name" hidden type="text" value="BUSINESS ANALYST" >
+                    </div>
+ 
+                    
+                    <div class="modal-body col-md-6 col-md-offset-2">
+                   <input type="submit" data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"/>
+                   &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="enrollFocus()" value="Submit"></input>
+                   </div>
+                </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="emyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>
+    <!-- End -->
+    <!-- WRAPPER-->
+    <div id="wrapper-content">
+        <!-- PAGE WRAPPER-->
+        <div id="page-wrapper">
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <!-- CONTENT-->
+                <div class="content">
+                    <div class="section background-opacity page-title set-height-top">
+                        <div class="container">
+                            <div class="page-title-wrapper">
+                                <!--.page-title-content-->
+                                <h2 class="captions">mongodb</h2>
+                                <ol class="breadcrumb">
+                                    <li><a href="/">Home</a></li>
+                                    <!-- <li><a href="categories.html">Categories</a></li> -->
+                                    <li><a href="/courses">Courses</a></li>
+                                    <li><a href="/best-meanstack-training-institute-in-noida">MEAN</a></li>
+                                    <li><a href="/best-mongodb-training-institute-in-noida">mongoDB</a></li>
+                                    <!-- <li class="active"><a href="#">Courses Detail</a></li> -->
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="section section-padding courses-detail">
+                        <div class="container">
+                            <div class="courses-detail-wrapper">
+                                <div class="row">
+                                    <div class="col-md-9 layout-left">
+                                        <!-- <h1 class="course-title">GETTING STARTED WITH DJANGO</h1> -->
+
+                                        <!-- <div class="course-info info">
+                                        <div class="author item"><a href="#"><span>By&nbsp;</span><span>Emma Watson</span></a></div>
+                                        <div class="date-time item"><a href="#">20 Aug 2015</a></div>
+                                    </div>-->
+                                        <div class="course-video">
+                                            <!-- <iframe -->
+                                                <!-- src="https://www.youtube.com/embed/xo1VInw-SKc?list=PL7JgdmQ0zTfatnGhUnRBnhMwYEraSIRdD" -->
+                                                <!-- allowfullscreen="allowfullscreen"></iframe> -->
+                                            <div class="video-btn">
+                                                <!-- <button class="btn btn-grey video-btn-right pull-right"><span>next lesson</span><i class="fa fa-angle-right"></i></button> -->
+                                                <!-- <button class="btn btn-grey video-btn-left pull-right"><i class="fa fa-angle-left"></i><span>previous lesson</span></button> -->
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="course-des">
+                                                <div class="course-des-title underline">Courses Info</div>
+                                                <div class="course-des-content">
+                                                    <p>MongoDB is a cross-platform document-oriented database program. It allows your teams to easily organize, use and enrich data – in real time, anywhere. 
+                                                    </p>
+                                                    <p>MongoDB helps you to control where data is placed globally so you can easily ensure fast performance anywhere and compliance with regulations. MongoDB gives you the best way to work with data in a natural and intuitive way.</p>
+                                                    <blockquote>
+                                                        <!--<div class="main-quote">Video courses to build new skills from start
+                                                            to finish.</div>-->
+                                                        <div class="sub-quote">Learn MongoDB with excellent trainers. They provide study material and a practical knowledge which helped me to gain a complete understanding. It’s a right choice for starting your career.</div>
+                                                        <footer> Arvind&nbsp;
+                                                            <small>(MongoBD Studen)</small>
+                                                        </footer>
+                                                    </blockquote>
+                                                </div>
+                                                <div class="news-list">
+                                                    <div class="list-expand-title">What You Will Gain?</div>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                                            <ul class="list-unstyled list-detail">
+                                                                <li><i class="fa fa-angle-right"></i><a href="#"></a>Learn MongoDB to its full potential.</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Get to know how to install and setup MongoDB.</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">You will learn, how to write efficient and well-performing queries to fetch data in the format you want. </a></li>
+                                                                <!--<li><i class="fa fa-angle-right"></i><a href="#">Etiam id
+                                                                        lorem vel neque faucibus fermentum.</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Nunc
+                                                                        tincidunt augue in enim sollicitudin feugiat.</a>
+                                                                </li>-->
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                                            <ul class="list-unstyled list-detail">
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Gain understanding on how MongoDB stores data Get equipped with most popular MongoDB interface, Mongoose JS. </a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Learn how MongoDB can also be used as a file system, which helps in easier way of load balancing.</a></li>
+                                                                <!--<li><i class="fa fa-angle-right"></i><a href="#">Nullam id
+                                                                        dolor in ex eleifend tempus.</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Etiam id
+                                                                        lorem vel neque faucibus fermentum.</a></li>
+                                                                <li><i class="fa fa-angle-right"></i><a href="#">Nunc
+                                                                        tincidunt augue in enim sollicitudin feugiat.</a>
+                                                                </li>-->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="course-syllabus">
+                                            <div class="course-syllabus-title underline">Courses syllabus</div>
+                                            <div class="course-table">
+                                                <div class="outer-container">
+                                                    <div class="inner-container">
+                                                        <div class="table-header">
+                                                            <table class="edu-table-responsive">
+                                                                <thead>
+                                                                    <tr class="heading-table">
+                                                                        <th class="col-1">title</th>
+                                                                        <!--<th class="col-2">estimate time</th>
+                                                                <th class="col-3">spent time</th>
+                                                                <th class="col-4">status</th>-->
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                        <div class="table-body">
+                                                            <table class="edu-table-responsive table-hover">
+                                                                <tbody>
+                                                                    <tr class="heading-content">
+                                                                        <td colspan="4" class="left heading-content">
+                                                                            1.MongoDB Tutorial</td>
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.1
+                                                                                    MongoDB -Home</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.2
+                                                                                    MongoDB - Overview</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.3
+                                                                                    MongoDB - Advantages</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.4
+                                                                                    MongoDB - Environment</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.5
+                                                                                    MongoDB - Data Modelling</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.6
+                                                                                    MongoDB - Create Database</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.7
+                                                                                    MongoDB - Drop Database</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.8
+                                                                                    MongoDB - Create
+                                                                                    Collection</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.9
+                                                                                    MongoDB - Drop Collection</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.10
+                                                                                    MongoDB - Datatypes</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.11
+                                                                                    MongoDB - Insert Document</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.12
+                                                                                    MongoDB - Query Document</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.13
+                                                                                    MongoDB - Update Document</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.14
+                                                                                    MongoDB - Delete Document</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.15
+                                                                                    MongoDB - Projection</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.16
+                                                                                    MongoDB - Limit Records</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.17
+                                                                                    MongoDB - Sort Records</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.18
+                                                                                    MongoDB - Indexing</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.19
+                                                                                    MongoDB - Aggregation</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.20
+                                                                                    MongoDB - Replication</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.21
+                                                                                    MongoDB - Create Backup</span></a>
+                                                                        </td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.22
+                                                                                    MongoDB - Deployment</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.23
+                                                                                    MongoDB - Java</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.24
+                                                                                    MongoDB - PHP</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>1.17
+                                                                                    MongoDB - NodeJS</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="spacing-table">
+                                                                        <td colspan="4"></td>
+                                                                    </tr>
+                                                                    <tr class="heading-content">
+                                                                        <td colspan="4" class="left heading-content">2.
+                                                                            Advanced MongoDB</td>
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.1
+                                                                                    MongoDB - Relationships</span></a>
+                                                                        </td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.2
+                                                                                    MongoDB - Database
+                                                                                    References</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.3
+                                                                                    MongoDB - Covered Queries</span></a>
+                                                                        </td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.4
+                                                                                    MongoDB - Analyzing
+                                                                                    Queries</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.5
+                                                                                    MongoDB - Atomic
+                                                                                    Operations</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.6
+                                                                                    MongoDB - Advanced
+                                                                                    Indexing</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.7
+                                                                                    MongoDB - Indexing
+                                                                                    Limitations</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.8
+                                                                                    MongoDB - ObjectId</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.9
+                                                                                    MongoDB - Map Reduce</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.10
+                                                                                    MongoDB - Text Search</span></a>
+                                                                        </td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.11
+                                                                                    MongoDB - Regular
+                                                                                    Expression</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.12
+                                                                                    Working with RockMongo</span></a>
+                                                                        </td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.13
+                                                                                    MongoDB - GridFS</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.14
+                                                                                    MongoDB - Capped
+                                                                                    Collections</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>2.8
+                                                                                    MongoDB - Auto-Increment
+                                                                                    Sequence</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="bolder-color col-4"><i class="w27 fa fa-lock"></i><span>Private</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="spacing-table">
+                                                                        <td colspan="4"></td>
+                                                                    </tr>
+                                                                    <tr class="heading-content">
+                                                                        <td colspan="4" class="left heading-content">3.
+                                                                            MongoDB Useful Resources</td>
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>3.1
+                                                                                    MongoDB Questions and
+                                                                                    Answers</span></a></td>
+                                                                        <!--<td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>40:20</span></td>
+                                                                <td class="green-color col-4"><i class="w27 fa fa-check-square"></i><span>Complete</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>3.2
+                                                                                    MongoDB - Quick Guide</span></a>
+                                                                        </td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"><i class="w20 fa fa-clock-o"></i><span>20:20</span></td>
+                                                                <td class="bold-color col-4"><i class="w27 fa fa-pencil-square-o"></i><span>Learning</span></td>-->
+                                                                    </tr>
+                                                                    <tr class="table-row">
+                                                                        <td class="left col-1"><a href="#"><i
+                                                                                    class="bg-green mr25 fa fa-caret-right"></i><span>3.3
+                                                                                    MongoDB - Useful
+                                                                                    Resources</span></a></td>
+                                                                        <!-- <td class="col-2"><i class="w20 fa fa-clock-o"></i><span>50:20</span></td>
+                                                                <td class="col-3"></td>
+                                                                <td class="col-4">
+                                                                    <div class="bg-yellow">FREE</div>
+                                                                </td>-->
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 sidebar layout-right">
+                                        <div class="row">
+                                            <div class="course-price-widget widget col-sm-6 col-md-12 col-xs-6 ₹">
+
+                                                <div class="title-widget">
+                                                    <p>Details</p>
+                                                </div>
+                                                <div class="content-widget">
+                                                    <div class="course-price-widget-wrapper">
+                                                        <div class="row">
+                                                            <div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                                <div class="pull-left title">Duration</div>
+                                                                <div class="pull-right level">1 Months</div>
+                                                            </div>
+                                                            <div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                                <div class="pull-left title">Level:</div>
+                                                                <div class="pull-right level">Advanced</div>
+                                                            </div>
+                                                            <!-- <div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                            <div class="pull-left title">Finished:</div>
+                                                            <div class="pull-right firgue">42</div>
+                                                        </div>-->
+                                                            <!--<div class="col-md-12 info-row col-sm-12 col-xs-12">
+                                                            <div class="pull-left title">Rate:</div>
+                                                            <div title="Rated 5.00 out of 5" class="pull-right star-rating"><span class="width-80"><strong class="rating">5.00</strong> out of 5</span></div>
+                                                        </div>-->
+                                                        </div>
+                                                        <button class="btn btn-green" data-target="#enroll_now"  data-toggle="modal"><span>ENQUIRE NOW!</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+
+                                
+                                        <div class="tag-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
+                                            <div class="title-widget">tags</div>
+                                            <div class="content-widget">
+                                                <ul class="tag-widget list-unstyled">
+                                                    <li><a href="/best-web-designing-training-institute-in-noida" class="tag-item">Web Designing</a></li>
+                                                    <li><a href="best-php-programs-training-training-institute-in-noida.html" class="tag-item">PHP Programs</a></li>
+                                                    <li><a href="best-java-training-institute-in-noida.html" class="tag-item">Java Programs</a></li>
+                                                    <li><a href="best-python-training-institute-in-noida.html" class="tag-item">Python</a></li>
+                                                    <!-- <li><a href="best-spring-training-institute-in-noida.html" class="tag-item">Spring</a></li> -->
+                                                    <!-- <li><a href="best-spring-boot-training-institute-in-noida.html" class="tag-item">Spring Boot</a></li> -->
+                                                    <!-- <li><a href="best-oracle-training-institute-in-noida.html" class="tag-item">Oracle</a></li> -->
+                                                    <li><a href="/best-nodejs-training-institute-in-noida" class="tag-item">NodeJS</a></li>
+                                                    <li><a href="/best-angularjs-training-institute-in-noida" class="tag-item">AngularJS</a></li>
+                                                    <li><a href="/best-expressjs-training-institute-in-noida" class="tag-item">ExpressJS</a></li>
+                                                    <li><a href="/best-mongodb-training-institute-in-noida" class="tag-item">MongoDB</a></li>
+                                                    <!-- <li><a href="best-machine-learning-training-institute-in-noida.html" class="tag-item">Machine Learning</a></li> -->
+                                                    <!-- <li><a href="best-micro-services-training-institute-in-noida.html" class="tag-item">Micro Services</a></li> -->
+                                                    <li><a href="best-.net-training-institute-in-noida.html" class="tag-item">.Net</a></li>
+                                                    <!-- <li><a href="best-graphics-training-institute-in-noida.html" class="tag-item">Graphics</a></li> -->
+                                                    <li><a href="best-c++-training-institute-in-noida.html" class="tag-item">C/C++</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                            <div class="clearfix"></div>
+
+                                            <div class="news-list">
+                                                <div class="list-expand-title">A Few Things You'll Love!</div>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <ul class="list-unstyled list-detail">
+                                                            <li><i class="fa fa-angle-right"></i><a href="#"> Certified
+                                                                    & Industry Experts Trainers</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">Multiple
+                                                                    Training Delivery Models</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#"> 24/7
+                                                                    e-Learning Access</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#">Assessments
+                                                                    and Mock Tests</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#"> Advance
+                                                                    Analytical Reports</a></li>
+                                                            <li><i class="fa fa-angle-right"></i><a href="#"> Placement
+                                                                    Assistance</a></li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="clearfix"></div>
+                                            <div class="category-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
+                                                <div class="title-widget">categories</div>
+                                                <div class="content-widget">
+                                                    <ul class="category-widget list-unstyled">
+                                                        <li><a href="/courses" class="link cat-item"><span
+                                                                    class="pull-left">Technology</span><span
+                                                                    class="pull-right">12</span></a></li>
+                                                        <li><a href="softskill.html" class="link cat-item"><span
+                                                                    class="pull-left">Soft-skill/PD</span><span
+                                                                    class="pull-right">6</span></a></li>
+                                                        <!--<li><a href="categories.html" class="link cat-item"><span class="pull-left">Photography</span><span class="pull-right">56</span></a></li>
+                                                        <li><a href="categories.html" class="link cat-item"><span class="pull-left">Video</span><span class="pull-right">24</span></a></li>
+                                                        <li><a href="categories.html" class="link cat-item"><span class="pull-left">Miscellaneous</span><span class="pull-right">13</span></a></li>-->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BUTTON BACK TO TOP-->
+        <div id="back-top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div>
+    </div>
+    
+    
+        <!-- LOADING-->
+        <div class="body-2 loading">
+            <div class="dots-loader"></div>
+        </div>
+    </body>
+    
+    

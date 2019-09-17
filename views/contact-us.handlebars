@@ -1,0 +1,294 @@
+<body>
+    <!-- script for modal pop up when clicked on enquir now & become an instructor -->
+        <script>
+                function becomeFocus() {
+                    $('#bname').focus();
+                    }
+                // function become_An_Instructor(){
+                //     var name = document.getElementById("bname").value;
+                //     var email = document.getElementById("bemail").value;
+                //     var mobile = document.getElementById("bmobile").value;
+                //     var Expertise = document.getElementById("bExpertise").value;
+                //     $.ajax({
+                //         url: "Become_An_Instructor.php",
+                //         data:{
+                //         'name':name,
+                //         'email':email,
+                //         'mobile':mobile,
+                //         'expertise':Expertise
+                //         },
+                //         type: "POST",
+                //         success: function(data){
+                //         $data=JSON.parse(data);
+                //         $("#bmyform").html($data);
+                //         document.getElementById("bname").readOnly = true;
+                //         document.getElementById("bemail").readOnly = true;
+                //         document.getElementById("bmobile").readOnly = true;
+                //         document.getElementById("bExpertise").readOnly = true;
+                //         },
+                        
+                //     });
+                // }
+                </script>
+                <script>
+                function enrollFocus() {
+                    $('#ename').focus();
+                    }
+                // function enroll_now(){
+                //     var name = document.getElementById("ename").value;
+                //     var email = document.getElementById("eemail").value;
+                //     var mobile = document.getElementById("emobile").value;
+                //     var course = document.getElementById("course_name").value; 
+                //     var course = document.getElementById("course_applied_for").value; 
+                //     $.ajax({
+                //         url: "Enroll_now.php",
+                //         data:{
+                //         'name':name,
+                //         'email':email,
+                //         'mobile':mobile,
+                //         'course':course,
+                //         'course_applied_for':course_applied_for
+                //         },
+                //         type: "POST",
+                //         success: function(data){
+                //         $data=JSON.parse(data);
+                //         $("#emyform").html($data);
+                //         document.getElementById("ename").readOnly = true;
+                //         document.getElementById("eemail").readOnly = true;
+                //         document.getElementById("emobile").readOnly = true;
+                //         document.getElementById("course_name").readOnly = true;
+                //         document.getElementById("course_applied_for").readOnly = true;
+                //         },
+                        
+                //     });
+                // }
+                </script>
+                <script>
+                document.addEventListener('keyup', function(e) {
+                if (e.keyCode == 27) {
+                //alert('fsdf');
+                    document.getElementById('enroll_now').style.display = "none";
+                }
+            });
+            $(document).on('open', '.modal', function () {
+                $('input').attr('tabindex', "-1");
+                $('.modal-body input').each(function(index, input) {
+                    input.tabIndex = index + 1;
+                });
+            });
+            
+            $(document).on('close', '.modal', function () {
+                $('input').each(function(index, input) {
+                    input.tabIndex = index + 1;
+                 });
+            });
+            
+                </script>
+        <!-- End script for modal pop up when clicked on enquir now & become an instructor -->
+
+   
+            
+<!-- WRAPPER Modal popup box when click become an instructor-->
+<div class="modal  bg-w-form contact-form" id="become_an_instructor" role="dialog" >
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <form action="Become_An_Instructor.php" method="POST" onsubmit="become_An_Instructor();return false" >
+             <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>Apply Now!</center></h3>
+             </div>
+             <div class="row">
+             <div class="modal-body col-md-10 col-md-offset-1">
+               <div class="modal-body col-md-6">
+               <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="bname" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+               </div>
+               <div class="modal-body col-md-6"><label for="regemail" class="control-label form-label">Email <span class="highlight">*</span></label><input name="email" id="bemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+               </div>
+               <div class="modal-body col-md-6"><label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               <div class="modal-body col-md-6">
+               <label for="regpassword" class="control-label form-label">Your Expertise<span class="highlight">*</span></label><input name="expertise" id="bExpertise" type="text" placeholder="skills like....java, php, any other" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+               </div>
+               
+                <div class="modal-body col-md-6 col-md-offset-2 ">
+                <input type="submit" data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"></input>
+                &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="becomeFocus()" value="submit"></input>
+                </div>
+             </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="bmyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>
+     <!-- WRAPPER Modal popup box close when click become an instructor-->
+     <!-- WRAPPER Modal popup box when click enroll now-->
+     <div class="modal fade bg-w-form contact-form" id="enroll_now" role="dialog">
+         <div class="modal-dialog">
+         
+           <!-- Modal content-->
+           <div class="modal-content">
+           <form  action="Enroll_now.php" method="POST" onsubmit="enroll_now();return false" >
+             <div class="modal-header"> 
+              <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+              <h3><center>REGISTER NOW!</center></h3>
+             </div>
+             <div class="row">
+                 <div class="modal-body col-md-10 col-md-offset-1" >
+                   <div class="modal-body col-md-6">
+                   <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="ename" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regemail" class="control-label form-label">Email-Id <span class="highlight">*</span></label><input name="email" id="eemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+                   </div>
+                   <div class="modal-body col-md-6">
+                   <label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="emobile"  id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   <!---label for="regpassword" class="control-label form-label">Area Of Expertise <span class="highlight">*</span></label><input id="Expertise" type="password" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/--->
+                    
+                    </div>
+                    
+                    
+                    
+                    <div class="modal-body col-md-6">
+                   <label for="course_applied_for " class="control-label form-label">Course Applied For  <span class="highlight">*</span></label><input name="course_applied_for" id="course_applied_for"  type="text"   placeholder="e.g MEAN/JAVA/PHP/......" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                   
+                    <input id="course_name" hidden type="text" value="BUSINESS ANALYST" >
+                    </div>
+ 
+                    
+                    <div class="modal-body col-md-6 col-md-offset-2">
+                   <input type="submit" data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"/>
+                   &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="enrollFocus()" value="Submit"></input>
+                   </div>
+                </div>
+             </div>
+             <div class="modal-footer" >
+                 <center> <div id="emyform"></div></center>
+             </div>
+             </form>
+           </div>
+           
+         </div>
+     </div>
+    <!-- End  -->
+
+
+<!-- WRAPPER-->
+<div id="wrapper-content"><!-- PAGE WRAPPER-->
+    <div id="page-wrapper"><!-- MAIN CONTENT-->
+        <div class="main-content"><!-- CONTENT-->
+            <div class="content">
+                <div class="section background-opacity page-title set-height-top">
+                    <div class="container">
+                        <div class="page-title-wrapper"><!--.page-title-content--><h2 class="captions">Contact</h2>
+                            <ol class="breadcrumb">
+                                <li><a href="/">Home</a></li>
+                                <li class="active"><a href="#">Contact</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="section nav-subscribe">
+                    <div class="container">
+                        <div class="nav-subscribe-wrapper">
+                            <div class="nav-subscribe-left"><p class="subscribe-text">Subscribe <b class="focus">ThinkYard</b> to learn new creative skill</p></div>
+                            <div class="nav-subscribe-right">
+                                <button class="btn btn-green btn-bold"><span>SUBSCRIBE NOW</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <div class="section section-padding contact-main">
+                    <div class="container">
+                        <div class="contact-main-wrapper">
+                            <div class="row contact-method">
+                                <div class="col-md-4">
+                                    <div class="method-item"><i class="fa fa-map-marker"></i>
+
+                                        <p class="sub">COME TO</p>
+
+                                        <div class="detail"><p>A 40, Block A, Second Floor, </p>
+                                            <p>Sector 62 - Noida,</p>
+
+                                            <p>U.P - 201301, India</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="method-item"><i class="fa fa-phone"></i>
+
+                                        <p class="sub">CALL TO</p>
+
+                                        <div class="detail"><p>0120-4325-907</p>
+
+                                            <!-- <p>Mobile: 1-800-123-hello</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="method-item"><i class="fa fa-envelope"></i>
+
+                                        <p class="sub">CONNECT TO</p>
+
+                                        <div class="detail"><p>info@codesensai.com</p>
+
+                                            <p>www.codesensai.com</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <form class="bg-w-form contact-form" action="contact-us.php" method="POST" onsubmit="contactUs();return false">
+								<!-- Added for PHP Code -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"><b>Full Name</b><span class="highlight">*</span><input  name="name" id="cName" required="required" type="text"  class="form-control form-input" /><!--label.control-label.form-label.warning-label(for="") Warning for the above !--></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"><b>Email Address</b><span class="highlight">*</span><input name="email"  id="cEmail" type="email" required="required" class="form-control form-input" /><!--label.control-label.form-label.warning-label(for="")--></div>
+                                    </div>
+									<div class="col-md-6">
+                                        <div class="form-group"><b>Mobile</b><span class="highlight">*</span><input name="mobile" type="number"  min="0" max="10000000000" id="cMobile"  required="required" type="text"  class="form-control form-input" /><!--label.control-label.form-label.warning-label(for="")--></div>
+                                    </div>
+                                    <!---div class="col-md-6">
+                                        <div class="form-group"><label class="control-label form-label">PURPOSE</label><select class="form-control form-input selectbox">
+                                            <option value="">Please Select</option>
+                                            <option value="">example 1</option>
+                                            <option value="">example 2</option>
+                                            <option value="">example 3</option>
+                                        </select>label.control-label.form-label.warning-label(for="", hidden)></div>
+                                    </div-->
+                                    <div class="col-md-6">
+                                        <div class="form-group"><b>Subject</b><span class="highlight">*</span><input type="text" id="cSubject" name="subject"  required="required" class="form-control form-input" /><!--label.control-label.form-label.warning-label(for="", hidden)--></div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="contact-question form-group"><b>How we can help?
+										</b><span class="highlight">*</span><textarea name="msg" id="cMessage" placeholder="Enter your message" required="required" class="form-control form-input" ></textarea></div>
+                                    </div>
+                                </div>
+                                <div class="contact-submit">
+                                    <button type="submit" name="submit" class="btn btn-contact btn-green" onfocusout="contactFocus()"> <?php echo @$_GET['msg']; ?><span>SUBMIT CONTACT</span></button>
+                                </div>
+								<center> <div id="cmyform"></div></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="map" class="section contact-map">
+                        
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8623.33622613438!2d77.36933766094738!3d28.626513828353588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa89caf8bfb9e7068!2sI%20Thum%20Sector%2062%20Noida!5e0!3m2!1sen!2sin!4v1568097727532!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BUTTON BACK TO TOP-->
+    <div id="back-top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div>
+</div>
+
+</body>

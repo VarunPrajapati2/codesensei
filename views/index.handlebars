@@ -1,0 +1,1181 @@
+
+
+<body>
+        <script>
+                function becomeFocus() {
+                    $('#bname').focus();
+                    }
+                 </script>
+                 
+                <script>
+                function enrollFocus() {
+                    $('#ename').focus();
+                    }
+                </script>
+
+                <script>
+                document.addEventListener('keyup', function(e) {
+                if (e.keyCode == 27) {
+                //alert('fsdf');
+                    document.getElementById('enroll_now').style.display = "none";
+                }
+            });
+            $(document).on('open', '.modal', function () {
+                $('input').attr('tabindex', "-1");
+                $('.modal-body input').each(function(index, input) {
+                    input.tabIndex = index + 1;
+                });
+            });
+            
+            $(document).on('close', '.modal', function () {
+                $('input').each(function(index, input) {
+                    input.tabIndex = index + 1;
+                 });
+            });
+            
+                </script>
+               
+    
+
+    <!-- WRAPPER Modal popup box when click become an instructor-->
+<div class="modal  bg-w-form contact-form" id="become_an_instructor" role="dialog" >
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+           <form action="Become_An_Instructor.php" method="POST" onsubmit="become_An_Instructor();return false" >
+            <div class="modal-header"> 
+            <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+             <h3><center>Apply Now!</center></h3>
+            </div>
+            <div class="row">
+            <div class="modal-body col-md-10 col-md-offset-1">
+              <div class="modal-body col-md-6">
+              <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="bname" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+              </div>
+              <div class="modal-body col-md-6"><label for="regemail" class="control-label form-label">Email <span class="highlight">*</span></label><input name="email" id="bemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+              </div>
+              <div class="modal-body col-md-6"><label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+              </div>
+              <div class="modal-body col-md-6">
+              <label for="regpassword" class="control-label form-label">Your Expertise<span class="highlight">*</span></label><input name="expertise" id="bExpertise" type="text" placeholder="skills like....java, php, any other" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+              </div>
+              
+               <div class="modal-body col-md-6 col-md-offset-2 ">
+               <input type="submit"  data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"/>
+               &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green"  value="submit"></input>
+               </div>
+            </div>
+            </div>
+            <div class="modal-footer" >
+                <center> <div id="bmyform"></div></center>
+            </div>
+            </form>
+          </div>
+          
+        </div>
+    </div>
+    <!-- WRAPPER Modal popup box close when click become an instructor-->
+    <!-- WRAPPER Modal popup box when click enroll now-->
+    <div class="modal fade bg-w-form contact-form" id="enroll_now" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+          <form  action="Enroll_now.php" method="POST" onsubmit="enroll_now();return false" >
+            <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" style="font-size: 50px;">×</button>
+             <h3><center>REGISTER NOW!</center></h3>
+            </div>
+            <div class="row">
+                <div class="modal-body col-md-10 col-md-offset-1" >
+                  <div class="modal-body col-md-6">
+                  <label for="regname" class="control-label form-label ">Name <span class="highlight">*</span></label><input name="name" id="ename" type="text" placeholder="" required class="form-control form-input" style="border:1px solid black; background-color:  lightgray;"  /><!--p.help-block Warning !-->
+                  </div>
+                  <div class="modal-body col-md-6">
+                  <label for="regemail" class="control-label form-label">Email-Id <span class="highlight">*</span></label><input name="email" id="eemail" type="email" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required />
+                  </div>
+                  <div class="modal-body col-md-6">
+                  <label for="regpassword" class="control-label form-label">Mobile No. <span class="highlight">*</span></label><input name="mobile" id="emobile"  id="bmobile"type="number"  min="0" max="10000000000" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                  <!---label for="regpassword" class="control-label form-label">Area Of Expertise <span class="highlight">*</span></label><input id="Expertise" type="password" placeholder="" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/--->
+                   
+                   </div>
+                   
+                   
+                   
+                   <div class="modal-body col-md-6">
+                  <label for="course_applied_for " class="control-label form-label">Course Applied For  <span class="highlight">*</span></label><input name="course_applied_for" id="course_applied_for"  type="text"   placeholder="e.g MEAN/JAVA/PHP/......" class="form-control form-input" style="border:1px solid black; background-color:  lightgray;" required/>
+                  
+                   <input id="course_name" hidden type="text" value="BUSINESS ANALYST" >
+                   </div>
+
+                   
+                   <div class="modal-body col-md-6 col-md-offset-2">
+                  <input type="submit" data-dismiss="modal" class="btn btn-register btn-green" value="Cancel"/>
+                  &nbsp;&nbsp;<input  type="submit" class="btn btn-register btn-green" onfocusout="enrollFocus()" value="Submit"></input>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-footer" >
+                <center> <div id="emyform"></div></center>
+            </div>
+            </form>
+          </div>
+          
+        </div>
+    </div>
+    
+    <!-- WRAPPER-->
+    <div id="wrapper-content">
+        <!-- PAGE WRAPPER-->
+        <div id="page-wrapper">
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <!-- CONTENT-->
+                <div class="content">
+                    <!-- SLIDER BANNER-->
+                    <div class="section slider-banner set-height-top">
+                        <div class="slider-item">
+                            <div class="slider-1">
+                                <div class="slider-caption">
+                                    <div class="container">
+                                        <h5 class="text-info-2" style="color: white;">Learn from industry Expert  </h5>
+
+                                        <h1 class="text-info-1">Your Sucess partner </h1>
+
+                                        <p class="text-info-3">A better Place to Learn and Grow  </p>
+                                        <button class="btn btn-green" onclick="window.location.href='/courses'"><span>Start learning now !</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                  
+                        <div class="slider-item">
+                            <div class="slider-2">
+                                <div class="slider-caption">
+                                    <div class="container">
+                                        <h5 class="text-info-2">If you can dream it, you can do it
+                                        </h5>
+
+                                        <h1 class="text-info-1">Learning Never Ends  </h1>
+
+                                        <p class="text-info-3">Learning has no boundaries of Age, Time and Place   </p>
+
+                                        <button class="btn btn-green"  onclick="window.location.href='/courses'"><span>Start learning now !</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="slider-3">
+                                <div class="slider-caption">
+                                    <div class="container">
+                                        <h5 class="text-info-2" style="color: #273655;">Shape your future with CodeSensai   </h5>
+
+                                        <h1 class="text-info-1">Achieve your Goals  </h1>
+
+                                        <p class="text-info-3">We aim above the mark to hit the mark</p>
+                                        <button class="btn btn-green"  onclick="window.location.href='/courses'"><span>Start learning now !</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- about-us -->
+                    <div class="section intro-edu">
+                        <div class="container">
+                            <div class="intro-edu-wrapper">
+                                <div class="row">
+                                    <div class="col-md-5"><img src="images/people-avatar-81.png" alt=""
+
+                                        class="intro-image fadeInLeft animated wow" /></div>
+                                    <div class="col-md-7">
+                                        <div class="intro-title">WHAT IS <b>CodeSensai </b> ?</div>
+                                        <div class="intro-content">
+                                            <p>CodeSensai  is a pioneering initiative that aim to deliver the career building IT training solutions to the Aspirants, Professionals, Corporate and Education Institutes. Our team is keep on analyzing the industry requirements to ensure that we offers the relevant training courses & learning to the students, which in result improves the chances of employment in the industry. </p>
+
+                                            <p>We believe in providing the proper career planning and evolve through it with consistent career management. With this vision, we are here to serve you for all your career needs and get you a great start.</p>
+                                        
+                                <P>Our Mission is to give you a platform to Learn,grow and achieve the excellence, with your potential and our passion.</P>
+                                        </div>
+                                        <div class="group-button">
+                                            <!-- <button class="btn btn-transition-2"><span>purchase theme</span></button> -->
+                                            <button class="btn btn-green" onclick="window.location.href='/about-us'"><span>KNOW MORE</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End about-us -->
+                    <!-- CHOOSE COURSES-->
+                    <div class="section section-padding choose-course">
+                        <div class="container">
+                            <div class="group-title-index">
+                                <h4 class="top-title">CHOOSE YOUR COURSE</h4>
+
+                                <h2 class="center-title">GET CERTIFIED WITH OUR PERSONALIZED TRAINING PROGRAMS</h2>
+<p>CodeSensai provide numerous technical courses for students and professionals to bridge the gap between academic study, or to provide additional professional training and qualifications.  
+
+    <b style="font-size:15px;"> What do you want to learn?  Still confused about which program you should choose? </b>
+    <br>
+    Visit us for a career counselling session if you are confused about which career option and program you should choose. Our experts will guide you based on your current skill-set, understanding, traits and interests, to choose a right program fit for you.
+    </p>                            </div>
+                            <div class="choose-course-wrapper row">
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="item-course item-1">
+                                        <div class="icon-circle">
+                                            <div class="icon-background"><i class="icons-img icon-globe"></i></div>
+                                            <div class="info">
+                                                <div class="info-back"><a href="/courses">Learn with IT industry experts.</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="name-course"><a href="/best-meanstack-training-institute-in-noida">Mean Stack Development</a><i
+                                                class="fa fa-long-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="item-course item-2">
+                                        <div class="icon-circle">
+                                            <div class="icon-background"><i class="icons-img fa fa-database"></i></div>
+                                            <div class="info">
+                                                <div class="info-back"><a href="/courses">Enhance Designing skills.</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="name-course"><a href="digitalmarkating.html">UI Developer</a><i
+                                                class="fa fa-long-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="item-course item-3">
+                                        <div class="icon-circle">
+                                            <div class="icon-background"><i class="icons-img icon-computer_network"></i>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-back"><a href="/courses">Improve your Front End Development skills.</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="name-course"><a href="softskill.html">Angular</a><i
+                                                class="fa fa-long-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="item-course item-4">
+                                        <div class="icon-circle">
+                                            <div class="icon-background"><i class="icons-img icon-photocamera_1"></i>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-back"><a href="/courses">Gain technology knowledge with experts.</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="name-course"><a href="/courses">Academic Program</a><i
+                                                class="fa fa-long-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="item-course item-5">
+                                        <div class="icon-circle">
+                                            <div class="icon-background"><i class="icons-img icon-credit_card"></i>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-back"><a href="/courses">Equipped with latest technology stack.</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="name-course"><a href="/courses">Full Stack Development</a><i
+                                                class="fa fa-long-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="item-course item-6">
+                                        <div class="icon-circle">
+                                            <div class="icon-background"><i class="icons-img icon-chat_bubbles"></i>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-back"><a href="/courses">Learn and get certified.</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="name-course"><a href="/courses">Certified Course</a><i
+                                                class="fa fa-long-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PROGRESS BARS-->
+                    <div class="section progress-bars section-padding">
+                        <div class="container">
+                            <div class="progress-bars-content">
+                                <div class="progress-bar-wrapper">
+                                    <h2 class="title-2">Some important facts about us</h2>
+
+                                    <div class="row">
+                                        <div class="content">
+                                            <div class="col-sm-3">
+                                                <div class="progress-bar-number">
+                                                    <div data-from="0" data-to="10" data-speed="1000" class="num">0
+                                                    </div>
+                                                    <p class="name-inner">Learn from industry leaders</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="progress-bar-number">
+                                                    <div data-from="0" data-to="30" data-speed="1000" class="num">0
+                                                    </div>
+                                                    <p class="name-inner">Courses</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="progress-bar-number">
+                                                    <div data-from="0" data-to="170" data-speed="1000" class="num">0
+                                                    </div>
+                                                    <p class="name-inner">Students</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="progress-bar-number">
+                                                    <div data-from="0" data-to="15" data-speed="1000" class="num">0
+                                                    </div>
+                                                    <p class="name-inner">Live Projects</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="group-button">
+                                        <button onclick="window.location.href='categories.html'"
+                                            class="btn btn-transition-3"><span>Purchase theme</span></button>
+                                        <button onclick="window.location.href='about-us.html'"
+                                            class="btn btn-green-3"><span>start Learn now</span></button>
+                                    </div> -->
+                                    <div class="group-btn-slider">
+                                        <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
+                                        <div class="btn-next"><i class="fa fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TOP COURSES-->
+                    <div class="section section-padding top-courses">
+                        <div class="container">
+                            <div class="group-title-index">
+                                <h4 class="top-title">CHOOSE YOUR COURSE</h4>
+
+                                <h2 class="center-title"> Top popular courses</h2>
+
+                                <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i></div>
+                            </div>
+                            <div class="top-courses-wrapper">
+                                <div class="top-courses-slider">
+                                    <div class="top-courses-item">
+                                        <div class="edugate-layout-2">
+                                            <div class="edugate-layout-2-wrapper">
+                                                <div class="edugate-content"><a href="/best-meanstack-training-institute-in-noida"
+                                                        class="title">MEAN Stack</a>
+
+                                                    <!-- <div class="info">
+                                                        <div class="author item"><a href="#">By Admin</a></div>
+                                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                    </div>
+                                                    <div class="info-more">
+                                                        <div class="view item"><i class="fa fa-user"></i>
+
+                                                            <p> 56</p>
+                                                        </div>
+                                                        <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                            <p> 239</p>
+                                                        </div>
+                                                    </div>
+                                                    <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                            class="width-80"><strong class="rating">5.00</strong> out of
+                                                            5</span></div> -->
+                                                    <div class="description">MEAN is a collection of JavaScript based technologies used to develop web applications.</div>
+                                                    <button onclick="window.location.href='/best-meanstack-training-institute-in-noida'"
+                                                        class="btn btn-green"><span>Know More</span></button>
+                                                </div>
+                                                <div class="edugate-image"><img
+                                                        src="images/courses/Mean.jpg" alt=""
+                                                        class="img-responsive" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="top-courses-item">
+                                        <div class="edugate-layout-2">
+                                            <div class="edugate-layout-2-wrapper">
+                                                <div class="edugate-content"><a href="best-java-programs-training-institute-in-noida.html"
+                                                        class="title">Node.js</a>
+
+                                                    <!-- <div class="info">
+                                                        <div class="author item"><a href="#">By Admin</a></div>
+                                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                    </div>
+                                                    <div class="info-more">
+                                                        <div class="view item"><i class="fa fa-user"></i>
+
+                                                            <p> 56</p>
+                                                        </div>
+                                                        <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                            <p> 239</p>
+                                                        </div>
+                                                    </div>
+                                                    <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                            class="width-10"><strong class="rating">5.00</strong> out of
+                                                            5</span></div> -->
+                                                    <div class="description">Node.js courses are specially designed for the candidates who want to learn all aspects of Node.js from the basics.</div>
+                                                    <button onclick="window.location.href='best-java-programs-training-institute-in-noida.html'"
+                                                        class="btn btn-green"><span>Know More</span></button>
+                                                </div>
+                                                <div class="edugate-image"><img
+                                                        src="images/courses/Node.png" alt=""
+                                                        class="img-responsive" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-courses-slider">
+                                    <div class="top-courses-item">
+                                        <div class="edugate-layout-2">
+                                            <div class="edugate-layout-2-wrapper">
+                                                <div class="edugate-content"><a href="best-web-designing-training-institute-in-noida.html"
+                                                        class="title">Advance Web-Design</a>
+
+                                                    <!-- <div class="info">
+                                                        <div class="author item"><a href="#">By Admin</a></div>
+                                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                    </div>
+                                                    <div class="info-more">
+                                                        <div class="view item"><i class="fa fa-user"></i>
+
+                                                            <p> 56</p>
+                                                        </div>
+                                                        <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                            <p> 239</p>
+                                                        </div>
+                                                    </div>
+                                                    <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                            class="width-70"><strong class="rating">5.00</strong> out of
+                                                            5</span></div> -->
+                                                    <div class="description">This programs gives you a comprehensive knowledge. Best for those who want to make their career in this.</div>
+                                                    <button onclick="window.location.href='best-web-designing-training-institute-in-noida.html'"
+                                                        class="btn btn-green"><span> Know More</span></button>
+                                                </div>
+                                                <div class="edugate-image"><img
+                                                        src="images/courses/website-designing2.jpg" alt=""
+                                                        class="img-responsive" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="top-courses-item">
+                                        <div class="edugate-layout-2">
+                                            <div class="edugate-layout-2-wrapper">
+                                                <div class="edugate-content"><a href="best-advance-php-training-institute-in-noida.html"
+                                                        class="title">Advance Php</a>
+
+                                                    <!-- <div class="info">
+                                                        <div class="author item"><a href="#">By Admin</a></div>
+                                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                                    </div>
+                                                    <div class="info-more">
+                                                        <div class="view item"><i class="fa fa-user"></i>
+
+                                                            <p> 00</p>
+                                                        </div>
+                                                        <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                            <p> 02</p>
+                                                        </div>
+                                                    </div>
+                                                    <div title="Rated 5.00 out of 5" class="star-rating"><span
+                                                            class="width-90"><strong class="rating">5.00</strong> out of
+                                                            5</span></div> -->
+                                                    <div class="description">Develop dynamic and static websites with PHP. Program will enable you to be a creative and an innovative developer.</div>
+                                                    <button onclick="window.location.href='best-advance-php-training-institute-in-noida.html'"
+                                                        class="btn btn-green"><span>Know More</span></button>
+                                                </div>
+                                                <div class="edugate-image"><img
+                                                        src="images/courses/Advanced-PHP.jpg" alt=""
+                                                        class="img-responsive" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="group-btn-top-courses-slider">
+                                    <div class="btn-prev">&lsaquo;</div>
+                                    <div class="btn-next">&rsaquo;</div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WHY CHOOSE US 1-->
+                    <div class="section why-choose-us link-page"id="campustraining" >
+                        <div class="why-choose-us-wrapper-top">
+                            <div class="container">
+                                <div class="why-choose-us-wrapper">
+                                    <h2 class="title-2" >Campus Training</h2>
+
+                                    <p>These programs are designed for Education Institutes to enrich the students with latest technologies and making them employable. Also we focus on bridging the gap between the IT industry and Academic with our training solutions. 
+                                   Trainings will be conducted at the institute premises with our technology experts and gives an advantage to interact with the trainer to resolve their queries.</p>
+                                    <!-- <button onclick="window.location.href='categories.html'"
+                                        class="btn btn-green-2"><span>start Learn now</span></button> -->
+                                </div>
+                                <div data-wow-delay="0.2s" data-wow-duration="1.2s"
+                                    class="background-girl-1 wow fadeInUp"><img src="images/Institute.png" alt=""
+                                        class="img-responsive" /></div>
+                            </div>
+                        </div>
+                        <div class="why-choose-us-wrapper-bottom background-opacity">
+                            <div class="container">
+                                <div data-wow-delay="0.4s" data-wow-duration="1s"
+                                    class="row why-choose-us-wrapper wow zoomIn">
+                                    <div class="customs-row">
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i
+                                                class="fa fa-pencil-square-o"></i>
+
+                                            <p> Career Counselling</p>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-compress"></i>
+
+                                            <p> Skill Upgradation</p>
+                                        </div>
+                                    </div>
+                                    <div class="customs-row">
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-paper-plane"></i>
+
+                                            <p> Faculty development programs</p>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-folder-open"></i>
+
+                                            <p> Professional Trainers</p>
+                                        </div>
+                                    </div>
+                                    <div class="customs-row">
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-external-link"></i>
+
+                                            <p> Study Material</p>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6 section-icon">
+                                            <!-- <i class="fa fa-stumbleupon-circle"></i> -->
+
+                                            <!-- <p> Flexible payment methods</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- WHY CHOOSE US 2-->
+                    <div class="section why-choose-us link-page" id="classroomtraining">
+                            <div class="why-choose-us-wrapper-top">
+                                <div class="container">
+                                    <div class="why-choose-us-wrapper">
+                                        <h2 class="title-2">Classroom Training </h2>
+    
+                                        <p>There will be live training sessions by the domain expert trainer at Thinkyard premises. Both the trainer and the trainee get an opportunity for face-to-face interaction. Students and working professionals can enroll themselves for classroom training for the course they want.</p>
+                                            
+                                        <!-- <button onclick="window.location.href='categories.html'"
+                                            class="btn btn-green-2"><span>start Learn now</span></button> -->
+                                    </div>
+                                    <div data-wow-delay="0.2s" data-wow-duration="1.2s"
+                                        class="background-girl-1 wow fadeInUp" style="z-index: 9;"><img src="images/courses/classroom.jpg" alt=""
+                                            class="img-responsive" /></div>
+                                </div>
+                            </div>
+                            <div class="why-choose-us-wrapper-bottom background-opacity">
+                                <div class="container">
+                                    <div data-wow-delay="0.4s" data-wow-duration="1s"
+                                        class="row why-choose-us-wrapper wow zoomIn">
+                                        <div class="customs-row">
+                                            <div class="col-sm-4 col-xs-6 section-icon"><i
+                                                    class="fa fa-pencil-square-o"></i>
+    
+                                                <p> Professional Trainers</p>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-compress"></i>
+    
+                                                <p> Focused Lectures</p>
+                                            </div>
+                                        </div>
+                                        <div class="customs-row">
+                                            <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-paper-plane"></i>
+    
+                                                <p> Workshops</p>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-folder-open"></i>
+    
+                                                <p> Career Counselling</p>
+                                            </div>
+                                        </div>
+                                        <div class="customs-row">
+                                            <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-external-link"></i>
+    
+                                                <p> Training by expert trainers</p>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6 section-icon">
+                                                <!-- <i class="fa fa-stumbleupon-circle"></i> -->
+    
+                                                <!-- <p> Flexible payment methods</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- WHY CHOOSE US 3-->
+                    <div class="section why-choose-us link-page" id="corporatetraining">
+                        <div class="why-choose-us-wrapper-top">
+                            <div class="container">
+                                <div class="why-choose-us-wrapper">
+                                    <h2 class="title-2">Corporate Training</h2>
+
+                                    <p style="text-align: justify;"> These programs are designed for enhancing the corporate training and to overcome the challenges. Live training sessions will be there by our domain expert at your Office premises. Both the trainer and the trainee get an opportunity for face-to-face interaction. This will help to upgrade your knowledge and skills for better opportunity and growth.
+                                        </p>
+                                    <!-- <button onclick="window.location.href='categories.html'"
+                                        class="btn btn-green-2"><span>start Learn now</span></button> -->
+                                </div>
+                                <div data-wow-delay="0.2s" data-wow-duration="1.2s"
+                                    class="background-girl-1 wow fadeInUp" style="z-index: 9;"><img
+                                        src="images/girl-1.png" alt="" class="img-responsive" /></div>
+                            </div>
+                        </div>
+                        <div class="why-choose-us-wrapper-bottom background-opacity">
+                            <div class="container">
+                                <div data-wow-delay="0.4s" data-wow-duration="1s"
+                                    class="row why-choose-us-wrapper wow zoomIn">
+                                    <div class="customs-row">
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i
+                                                class="fa fa-pencil-square-o"></i>
+
+                                            <p> Technology based training </p>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-compress"></i>
+
+                                            <p> Study Material </p>
+                                        </div>
+                                    </div>
+                                    <div class="customs-row">
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-paper-plane"></i>
+
+                                            <p> Training Evaluation  </p>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-folder-open"></i>
+
+                                            <p> Regular Assessments </p>
+                                        </div>
+                                    </div>
+                                    <div class="customs-row">
+                                        <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-external-link"></i>
+
+                                            <p>Live Projects </p>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6 section-icon">
+                                            <!-- <i class="fa fa-stumbleupon-circle"></i> -->
+
+                                            <!-- <p> Flexible payment methods</p> -->
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PRICING-->
+                    <!-- <div class="section section-padding pricing">
+                    <div class="container">
+                        <div class="group-title-index"><h4 class="top-title">chooses your pricing</h4>
+
+                            <h2 class="center-title">the best pricing we offered</h2>
+
+                            <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="pricing-wrapper">
+                                <div class="col-sm-4">
+                                    <div class="pricing-widget">
+                                        <div class="pricing-header">
+                                            <div class="price-cost">
+                                                <div class="inner"><p data-from="0" data-to="0" data-speed="1000" class="inner-number">0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="pricing-content"><h3 class="pricing-title">trial</h3>
+
+                                            <p class="pricing-subtitle">30 days free trial</p>
+                                            <ul class="pricing-list">
+                                                <li><p><strong>One day</strong> trial</p></li>
+                                                <li><p><strong>Limited</strong> courses</p></li>
+                                                <li><p><strong>Free</strong> 3 lessons</p></li>
+                                                <li><p><strong>No</strong> supporter</p></li>
+                                                <li><p><strong>No</strong> ebook</p></li>
+                                                <li><p><strong>No</strong> tutorial</p></li>
+                                                <li><p><strong>Limited</strong> registered user</p></li>
+                                            </ul>
+                                            <div class="pricing-button"><a href="#">choose plan</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="pricing-widget main active">
+                                        <div class="pricing-header">
+                                            <div class="price-cost">
+                                                <div class="inner"><p data-from="0" data-to="35" data-speed="1000" class="inner-number">0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="pricing-content"><h3 class="pricing-title">Standard</h3>
+
+                                            <p class="pricing-subtitle">per month when paid annually</p>
+                                            <ul class="pricing-list">
+                                                <li><p><strong>One year</strong> standard access</p></li>
+                                                <li><p><strong>Limited</strong> courses</p></li>
+                                                <li><p><strong>300+</strong> lessons</p></li>
+                                                <li><p><strong>Random</strong> supporter</p></li>
+                                                <li><p><strong>View only</strong> ebook</p></li>
+                                                <li><p><strong>Standard</strong> tutorials</p></li>
+                                                <li><p><strong>Unlimited</strong> registered user</p></li>
+                                            </ul>
+                                            <div class="pricing-button"><a href="#">choose plan</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="pricing-widget">
+                                        <div class="pricing-header">
+                                            <div class="price-cost">
+                                                <div class="inner"><p data-from="0" data-to="89" data-speed="1000" class="inner-number">0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="pricing-content"><h3 class="pricing-title">Premiere</h3>
+
+                                            <p class="pricing-subtitle">per month when paid annually</p>
+                                            <ul class="pricing-list">
+                                                <li><p><strong>Life time</strong> access</p></li>
+                                                <li><p><strong>Unlimited</strong> All courses</p></li>
+                                                <li><p><strong>3000+</strong> lessons & growing</p></li>
+                                                <li><p><strong>Free</strong> supporter</p></li>
+                                                <li><p><strong>Free</strong> Ebook Downloads</p></li>
+                                                <li><p><strong>Premium</strong> tutorials</p></li>
+                                                <li><p><strong>Unlimited</strong> registered user</p></li>
+                                            </ul>
+                                            <div class="pricing-button"><a href="#">choose plan</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-btn-slider">
+                            <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
+                            <div class="btn-next"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- SLIDER TALK ABOUT US-->
+                    <!-- <div class="section background-opacity slider-talk-about-us">
+                        <div class="container">
+                            <div id="people-talk" data-ride="carousel" data-interval="5000"
+                                class="slider-talk-about-us-wrapper carousel slide">
+                                <div role="listbox" class="slider-talk-about-us-content carousel-inner">
+                                    <div class="peopel-item item active">
+                                        <p class="peopel-comment">" There are many variations of passages of Lorem Ipsum
+                                            available, but the majority have suffered alteration in some form, by
+                                            injected humour, or randomised words which don't look even slightly
+                                            believable. "</p>
+
+                                        <div class="group-peole-info">
+                                            <div class="peopel-avatar"><img src="images/people-avatar-1.jpg"
+                                                    alt="" class="img-responsive" /></div>
+                                            <div class="peopel-name">john doe</div>
+                                            <div class="people-job">Microshop Crop.SEO</div>
+                                        </div>
+                                    </div>
+                                    <div class="peopel-item item">
+                                        <p class="peopel-comment">" There are many variations of passages of Lorem Ipsum
+                                            available, but the majority have suffered alteration in some form, by
+                                            injected humour, or randomised words which don't look even slightly
+                                            believable. "</p>
+
+                                        <div class="group-peole-info">
+                                            <div class="peopel-avatar"><img src="images/people-avatar-1.jpg"
+                                                    alt="" class="img-responsive" /></div>
+                                            <div class="peopel-name">john doe</div>
+                                            <div class="people-job">Microshop Crop.SEO</div>
+                                        </div>
+                                    </div>
+                                    <div class="peopel-item item">
+                                        <p class="peopel-comment">" There are many variations of passages of Lorem Ipsum
+                                            available, but the majority have suffered alteration in some form, by
+                                            injected humour, or randomised words which don't look even slightly
+                                            believable. "</p>
+
+                                        <div class="group-peole-info">
+                                            <div class="peopel-avatar"><img src="images/people-avatar-1.jpg"
+                                                    alt="" class="img-responsive" /></div>
+                                            <div class="peopel-name">john doe</div>
+                                            <div class="people-job">Microshop Crop.SEO</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-btn-slider"><a href="#people-talk" role="button" data-slide="prev">
+                                <div class="btn-prev carousel-control left"><i class="fa fa-angle-left"></i></div>
+                            </a><a href="#people-talk" role="button" data-slide="next">
+                                <div class="btn-next carousel-control right"><i class="fa fa-angle-right"></i></div>
+                            </a></div>
+                    </div> -->
+                    <!--LATEST NEW-->
+                    <div class="section section-padding latest-news">
+                        <div class="container">
+                            <div class="group-title-index">
+                                <h4 class="top-title">latest news</h4>
+
+                                <h2 class="center-title">all about Latest updates</h2>
+
+                                <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
+                            </div>
+                            <div class="latest-news-wrapper">
+                                <div class="edugate-layout-1">
+                                    <div class="edugate-image"><img src="images/courses/angular.png" alt=""
+                                            class="img-responsive" /></div>
+                                    <div class="edugate-content">
+                                        <!-- <a href="news-detail.html" class="title">Effective researching method</a> -->
+                                        <a href="" class="title">Angular Latest Update</a>
+
+
+                                        <!-- <div class="info">
+                                            <div class="author item"><a href="#">By Admin</a></div>
+                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                        </div>
+                                        <div class="info-more">
+                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                <p> 56</p>
+                                            </div>
+                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                <p> 239</p>
+                                            </div>
+                                        </div> -->
+                                        <div class="description">Angular new Version 8.0 may be released in Q2 of this year.New release will have Differential Loading of Modern JavaScript,
+                                                Opt-in Ivy Preview,Improved Web Worker Bundling and many more. Read More about latest release.
+                                                </div>
+                                        <!-- <button onclick="window.location.href='https://blog.angular.io/a-plan-for-version-8-0-and-ivy-b3318dfc19f7'" class="btn btn-green" target="_blank"><span>Read More</span><a href="https://blog.angular.io/a-plan-for-version-8-0-and-ivy-b3318dfc19f7" target="_blank"></a></button> -->
+                                        <button onclick="window.open('https://blog.angular.io/a-plan-for-version-8-0-and-ivy-b3318dfc19f7')" class="btn btn-green"  ><span>Read More </span></button>
+
+                                        <!-- <button class="btn btn-green"><span>Know More</span></button> -->
+
+
+                                    </div>
+                                </div>
+                                <div class="edugate-layout-1">
+                                    <div class="edugate-image"><img src="images/courses/Node.png" alt=""
+                                            class="img-responsive" /></div>
+                                    <!-- <div class="edugate-content"><a href="news-detail.html" class="title">Effective researching method</a> -->
+                                        <div class="edugate-content"><a href=" " class="title">Node Latest Update</a>
+
+                                        <!-- <div class="info">
+                                            <div class="author item"><a href="#">By Admin</a></div>
+                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                        </div>
+                                        <div class="info-more">
+                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                <p> 56</p>
+                                            </div>
+                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                <p> 239</p>
+                                            </div>
+                                        </div> -->
+                                        <div class="description">
+                                                The Node.js project will release new versions of all supported release lines on, or shortly after, Wednesday, February 27th, 2019 UTC. 
+                                                These releases will incorporate at least two security fixes specific to Node.js, the highest severity of which is 'low'.Read More
+                                                </div>
+                                        <!-- <button onclick="window.location.href='https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/'" class="btn btn-green"><span>Read More</span></button> -->
+                                                                              <button onclick="window.open('https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/')" class="btn btn-green" ><span>Read more</span></button>
+
+                                        <!-- <button class="btn btn-green" ><span>learn now</span></button> -->
+
+                                    </div>
+                                </div>
+
+                                <div class="edugate-layout-1">
+                                    <div class="edugate-image"><img src="images/news/news-3.jpg" alt=""
+                                            class="img-responsive" /></div>
+                                    <!-- <div class="edugate-content"><a href="news-detail.html" class="title">Effective researching method</a> -->
+                                        <div class="edugate-content"><a href=" " class="title">MongoDB</a>
+
+                                        <!-- <div class="info">
+                                            <div class="author item"><a href="#">By Admin</a></div>
+                                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                        </div>
+                                        <div class="info-more">
+                                            <div class="view item"><i class="fa fa-user"></i>
+
+                                                <p> 56</p>
+                                            </div>
+                                            <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                <p> 239</p>
+                                            </div>
+                                        </div> -->
+                                        <div class="description">Build a Slack App in 10 minutes with MongoDB Stitch</div>
+                                        <!-- <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button> -->
+                                        <button class="btn btn-green" onclick="window.open('https://www.mongodb.com/blog/post/build-a-slack-app-in-10-minutes-with-mongodb-stitch')"><span>Read More</span></button>
+
+                                    </div>
+                                </div>
+
+                                <!-- <button class="btn btn-green btn-latest-new"><span>Browser All Post<i
+                                            class="fa fa-long-arrow-right"></i></span></button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BEST STAFF-->
+                    <div class="section section-padding background-opacity best-staff">
+                        <div class="container">
+                            <div class="group-title-index">
+                                <h4 class="top-title">touch them if you want</h4>
+
+                                <h2 class="center-title">Our Team Members</h2>
+
+                                <div class="bottom-title"><i class="bottom-icon icon-icon-05"></i></div>
+                            </div>
+                            <div class="best-staff-wrapper">
+                                <div class="best-staff-content">
+                                    <div class="staff-item">
+                                        <div class="staff-item-wrapper">
+                                            <div class="staff-info"><a href="#" class="staff-avatar"><img
+                                                        src="images/Krishna.jpg" alt=""
+                                                        class="img-responsive" /></a><a href="#" class="staff-name">Krishna Yadav
+                                                    </a>
+
+                                                <div class="staff-job">CEO & Co-Founder</div>
+                                                <!-- <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est
+                                                    eligendi optio cumque nilhi impedil quo minus end maximie fade
+                                                    posimus the end.</div> -->
+                                            </div>
+                                        </div>
+                                        <div class="staff-socials">
+                                            <!-- <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> -->
+                                                    <a href="https://www.linkedin.com/in/krishna-yadav-7ba02720" target="_blank" class="google"><i class="fa fa-linkedin"></i></a>
+                                                    <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
+                                                </div>
+                                    </div>
+                                    <div class="staff-item">
+                                        <div class="staff-item-wrapper">
+                                            <div class="staff-info"><a href="#" class="staff-avatar"><img
+                                                        src="images/Varun.jpg" alt=""
+                                                        class="img-responsive" /></a><a href="#" class="staff-name">Varun Kumar
+                                                    </a>
+
+                                                <div class="staff-job">Mean Stack Developer</div>
+                                                <!-- <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est
+                                                    eligendi optio cumque nilhi impedil quo minus end maximie fade
+                                                    posimus the end.</div> -->
+                                            </div>
+                                        </div>
+                                        <div class="staff-socials">
+                                            <!-- <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> -->
+                                                    <a href="https://www.linkedin.com/in/ritesh-yadav-23329022" target="_blank" class="google"><i class="fa fa-linkedin"></i></a>
+                                                    <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
+                                                </div>
+                                    </div>
+                                    <div class="staff-item">
+                                        <div class="staff-item-wrapper">
+                                            <div class="staff-info"><a href="#" class="staff-avatar"><img
+                                                        src="images/hemant.jpg" alt=""
+                                                        class="img-responsive" /></a><a href="#"
+                                                    class="staff-name">Hemant Kumar</a>
+
+                                                <div class="staff-job">Full Stack Developer</div>
+                                                <!-- <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est
+                                                    eligendi optio cumque nilhi impedil quo minus end maximie fade
+                                                    posimus the end.</div> -->
+                                            </div>
+                                        </div>
+                                        <div class="staff-socials">
+                                            <!-- <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> -->
+                                                    <a href="https://www.linkedin.com/in/hemant-kumar-0b682056/" class="google" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                                    <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
+                                                </div>
+                                    </div>
+
+
+                                    <div class="staff-item">
+                                        <div class="staff-item-wrapper">
+                                            <div class="staff-info"><a href="#" class="staff-avatar"><img
+                                                        src="images/swati.jpg" alt=""
+                                                        class="img-responsive" /></a><a href="#" class="staff-name">Swati Gupta
+                                                    </a>
+
+                                                <div class="staff-job">Assistant Manager</div>
+                                                <!-- <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est
+                                                    eligendi optio cumque nilhi impedil quo minus end maximie fade
+                                                    posimus the end.</div> -->
+                                             </div>
+                                        </div>
+                                        <div class="staff-socials">
+                                            <!-- <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> -->
+                                                    <a href="https://www.linkedin.com/in/swati-gupta-b9a6a24a/" target="_blank" class="google"><i class="fa fa-linkedin"></i></a>
+                                                     <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div> -->
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="group-btn-slider">
+                            <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
+                            <div class="btn-next"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                    <!-- start photo and gallery  -->
+
+                    <!-- PICTURE AND GALLERY-->
+                    <!-- <div class="section section-padding picture-gallery">
+                    <div class="group-title-index"><h4 class="top-title">see and feel it</h4>
+
+                        <h2 class="center-title">Pictures and gallery</h2>
+
+                        <div class="bottom-title"><i class="bottom-icon icon-a-1-01"></i></div>
+                    </div>
+                    <div class="picture-gallery-wrapper">  -->
+                    <!-- Nav tabs-->
+                    <!-- <ul role="tablist" class="nav nav-tabs edugate-tabs">
+                            <li role="presentation" class="active"><a href="#campus" data-toggle="tab" class="text">Campus</a></li>
+                            <li role="presentation"><a href="#education" data-toggle="tab" class="text">Education</a></li>
+                            <li role="presentation"><a href="#building" data-toggle="tab" class="text">Building</a></li>
+                            <li role="presentation"><a href="#teachers" data-toggle="tab" class="text">Teachers</a></li>
+                            <li role="presentation"><a href="#students" data-toggle="tab" class="text">Students</a></li>
+                        </ul> -->
+                    <!-- Tab panes-->
+                    <!-- <div class="tab-content gallery-content">
+                            <div id="campus" role="tabpanel" class="tab-pane fade in active">
+                                <div class="grid">
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-1.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-1.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-2.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-2.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-3.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-3.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-4.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-4.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-6.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-6.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-5.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-5.jpg" alt="" class="img-responsive"/></a></div>
+                                </div>
+                            </div>
+                            <div id="education" role="tabpanel" class="tab-pane fade">
+                                <div class="grid">
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-3.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-3.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-6.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-2.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-1.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-1.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-4.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-4.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-2.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-2.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-5.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-5.jpg" alt="" class="img-responsive"/></a></div>
+                                </div>
+                            </div>
+                            <div id="building" role="tabpanel" class="tab-pane fade">
+                                <div class="grid">
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-1.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-1.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-6.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-6.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-3.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-3.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-5.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-5.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-2.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-2.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-4.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-4.jpg" alt="" class="img-responsive"/></a></div>
+                                </div>
+                            </div>
+                            <div id="teachers" role="tabpanel" class="tab-pane fade">
+                                <div class="grid">
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-3.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-3.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-2.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-2.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-1.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-1.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-5.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-5.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-6.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-6.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-4.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-4.jpg" alt="" class="img-responsive"/></a></div>
+                                </div>
+                            </div>
+                            <div id="students" role="tabpanel" class="tab-pane fade">
+                                <div class="grid">
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-1.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-1.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-2.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-2.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height3"><a href="images/lib-pictures/pictures-3.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-3.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-5.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-5.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height2"><a href="images/lib-pictures/pictures-6.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-6.jpg" alt="" class="img-responsive"/></a></div>
+                                    <div class="grid-item grid-item-height1"><a href="images/lib-pictures/pictures-4.jpg" class="content fancybox-button"><img src="images/lib-pictures/pictures-4.jpg" alt="" class="img-responsive"/></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- End photo and gallery -->
+
+                    <!-- start slider logo -->
+                    <!-- SLIDER LOGO-->
+                    <!-- <div class="section slider-logo">
+                    <div class="container">
+                        <div class="slider-logo-wrapper">
+                            <div class="slider-logo-content">
+                                <div class="carousel-logos owl-carousel">
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- End slider logo -->
+                </div>
+            </div>
+        </div>
+        <!-- BUTTON BACK TO TOP-->
+        <div id="back-top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div>
+    </div>
+    
+    <!-- THEME SETTING-->
+    <!-- <div class="theme-setting">
+    <div class="theme-loading">
+        <div class="theme-loading-content">
+            <div class="dots-loader"></div>
+        </div>
+    </div>
+    <a href="javascript:;" class="btn-theme-setting"><i class="fa fa-tint"></i></a>
+
+    <div class="content-theme-setting"><h2 class="title">setting color</h2>
+        <ul class="list-unstyled list-inline color-skins">
+            <li data-color="color-1"></li>
+            <li data-color="color-2"></li>
+            <li data-color="color-3"></li>
+            <li data-color="color-4"></li>
+            <li data-color="color-5"></li>
+            <li data-color="color-6"></li>
+            <li data-color="color-7"></li>
+            <li data-color="color-8"></li>
+            <li data-color="color-9"></li>
+            <li data-color="color-10"></li>
+        </ul>
+    </div>
+</div> -->
+
+    <!-- LOADING-->
+    <div class="body-2 loading">
+        <div class="dots-loader"></div>
+    </div>
+    <!-- JAVASCRIPT LIBS-->
+    <!--script.-->
+    <!--    if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1')) {-->
+    <!--        $('.logo .header-logo img').attr('src', 'images/logo-' + Cookies.get('color-skin') + '.png');-->
+    <!--    } else if ((Cookies.get('color-skin') == undefined) || (Cookies.get('color-skin') == 'color-1')) {-->
+    <!--        $('.logo .header-logo img').attr('src', 'images/logo-color-1.png');-->
+    <!--    }-->
+</body>
+
